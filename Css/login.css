@@ -116,3 +116,13 @@
 
 }
 
+/** Footer **/
+.linha2{
+    background-image: url(../imagens/rainbow.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 100%;
+    height: auto;
+    width: 100%;
+}

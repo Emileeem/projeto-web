@@ -1,0 +1,67 @@
+/** Header **/
+.header {
+    height: 2.6568vw;
+    padding: 0rem !important;
+    flex-wrap: nowrap !important;
+}
+
+.linha {
+    background-image: url(../imagens/rainbow.svg);
+    background-repeat: no-repeat;
+    height: 8px;
+    background-size: cover;
+}
+
+.logo-inside {
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-text{
+    color: rgb(230, 230, 230);
+    font-size: 1.4vw;
+    font-weight: bold;
+    font-family: Calibri, sans-serif;
+}
+
+@media screen {}
+
+/** Main **/
+main{
+    margin-top: 2vw;
+}
+
+.all-things{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subject-box{
+    display: flex;
+    justify-content: center;
+}
+
+.subject-box-title{
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    width: min-content;
+    border-radius: 20px;
+    padding-right: 8vw;
+    padding-left: 8vw;
+}
+.subject-title {
+    color: rgb(141, 48, 107);
+    font-size: 5rem;
+    font-family: Calibri, sans-serif;
+    font-weight: bold;
+    margin: 0;
+}
+
+.media{
+    text-align: left;
+}
+.teste-media{
+    width: 1vw;
+}

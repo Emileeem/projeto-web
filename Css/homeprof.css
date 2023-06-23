@@ -15,7 +15,18 @@
     display: flex;
     justify-content: center;
 }
-
+.eta{
+    height: 1%;
+    font-size: 20px;
+}
+.dash{
+    text-align: right;
+    padding: 2px;
+}
+.sair{
+    text-decoration: none;
+    color: black;
+}
 /** Menu **/
 
 *{
@@ -38,7 +49,7 @@ body{
 
 .sidebar{
     position: fixed;
-    top: 12%;
+    top: 17%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -235,6 +246,13 @@ body{
     font-weight: 100;
 }
 
+.admat{
+    margin-right: 30px;
+
+}
+.add{
+    height: 20px;
+}
 /** cards **/
 .cor{
     height: 100px !important;

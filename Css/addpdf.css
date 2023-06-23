@@ -15,7 +15,18 @@
     display: flex;
     justify-content: center;
 }
-
+.eta{
+    height: 1%;
+    font-size: 20px;
+}
+.dash{
+    text-align: right;
+    padding: 2px;
+}
+.sair{
+    text-decoration: none;
+    color: black;
+}
 /** Menu **/
 
 *{
@@ -38,7 +49,7 @@ body{
 
 .sidebar{
     position: fixed;
-    top: 12%;
+    top: 17%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -219,34 +230,100 @@ body{
     }
 }
 
-/** Começo da Main **/
-
-.nome{
-    text-align: center;
+/**forms **/
+.titulo{
+    height: 10px !important;
+    padding: 0px !important;
+    background-color: red;
+}
+.formulario{
+    width: 35%;
+    border-radius: 20px;
+}
+.logo {
     font-family: 'Open Sans', sans-serif;
-    font-size: 30px;
-    font-weight: 600;
+}
+.image {
+    width: 100%;
+    left: 21%;
+    top: 1%;
+    display: flex;
+    float: right;
+}
+@media (max-width: 768px) {
+
+    .formulario{
+        width: 55%;
+        border-radius: 20px;
+    }
+    .logo {
+        font-family: 'Open Sans', sans-serif;
+    }
+    .image {
+        width: 90%;
+        position: relative;
+        left: -5%;
+    }
+}
+@media (max-width: 568px) {
+
+
+    .formulario{
+        width: 65%;
+        border-radius: 20px;
+    }
+    .logo {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    
+}
+@media (max-width: 340px) {
+
+    .formulario{
+        width: 65%;
+        border-radius: 20px;
+    }
+    .logo {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    
+}
+@media (min-width: 1000px){
+    .formulario{
+        width: 50%;
+        border-radius: 20px;
+    }
+    .logo {
+        font-family: 'Open Sans', sans-serif;
+    }
+    .image {
+        width: 60%;
+        position: relative;
+        left: -13%;
+    }
 }
 
-.materias{
-    margin-top: 80px !important;
-    padding-left: 10px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 100;
+@media (min-width: 1600px) {
+    .formulario{
+        width: 20%;
+        border-radius: 20px;
+    }
+    .logo {
+        font-family: 'Open Sans', sans-serif;
+    }
+
 }
 
-/** cards **/
-.cor{
-    height: 100px !important;
+.volta{
+    text-decoration: none;
+    color: #000;
 }
 
-.card-title{
-    text-align: center;
+.voltar{
+    font-size: 20px;
 }
-.card{
-    transition: all 0.4s;
+.voltar1{
+    font-size: 22px;
 }
-.card:hover {
-    transform: scale(1.1);
-}
-

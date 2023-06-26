@@ -1,0 +1,270 @@
+/** Cabecalho **/
+.linha{
+    background-image: url(../img/rainbow.svg);
+    background-repeat: no-repeat;
+    height: 10px;
+    background-size: cover;
+}
+.cabeca {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+}
+
+.etslogo {
+    width: 430px;
+    display: flex;
+    justify-content: center;
+}
+.eta{
+    height: 1%;
+    font-size: 20px;
+}
+.dash{
+    text-align: right;
+    padding: 2px;
+}
+.sair{
+    text-decoration: none;
+    color: black;
+}
+/** Menu **/
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #FFF;
+}
+
+.button-sidebar{
+    background: inherit;
+    color: inherit;
+    transition: all 0.45s;
+}
+.button-sidebar:hover{
+    transform: scale(1.2);
+}
+
+.sidebar{
+    position: fixed;
+    top: 17%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 240px;
+    height: 90%;
+    padding: 40px 10px 30px 10px;
+    transition: all 0.45s;
+}
+.sidebarheader{
+    width: 100%;
+    margin-bottom: 16px;
+}
+.logo-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.4s;
+    margin-left: 10px;
+}
+.logo-img:hover{
+    transform: scale(1.1);
+}
+
+.sidebar button {
+    height: 60px;
+    background: transparent;
+    border: 0;
+    font-family: sans-serif;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+}
+
+.sidebar button > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding: 0 16px 0 12px;
+    border-radius: 24px;
+    line-height: 1;
+    transition: all 0.4s;
+}
+
+.sidebar button:hover > span{
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.sidebar button i {
+    position: relative;
+    font-size: 28px;
+    transition: 0.2s;
+}
+
+.sidebar button span {
+    font-size: 16px;
+}
+
+.edv {
+    height: 48px;
+    padding: 0 16px 0 12px;
+    border-radius: 24px;
+    transition: all 0.4s;
+    text-align: center;
+    font-weight: 100;
+}
+.edv2{
+    margin-left: 14px;
+}
+.sidebar nav {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.main {
+    margin-left: 250px;
+    margin-right: 6px;
+    overflow: hidden;
+    transition: margin 0.45s;
+}
+/** Tamanhos **/
+@media (width < 920px){
+    .logo-img{
+        width: 35px;
+        height: 35px;
+    }
+    .sidebar{
+        width: 72px;
+    }
+    
+    .sidebar button > span{
+        width: 50px;
+    }
+
+    .sidebar button > span > span{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .edv{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .main{
+        margin-left: 78px;
+    }
+}
+
+.button-mobile{
+    display: none;
+    align-self: flex-start;
+    align-items: center;
+    margin: 16px;
+    background: transparent; 
+    color: #000;
+    border: 0;
+}
+.button-mobile span{
+    font-size: 24px;
+    margin-left: 8px;
+    color: #000;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.close span i {
+    font-size: 42px;
+}
+.menu-mobile{
+    display: none;
+}
+
+.menu-mobile-active{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.menu-mobile-active button{
+    background: transparent;
+    border: 0;
+    color: #fff;
+    margin-bottom: 16px;
+}
+.menu-mobile-active button > span{
+    display: inline-flex;
+    align-items: center;
+}
+.mobile-text{
+    font-size: 22px;
+    margin-left: 8px;
+}
+
+@media(max-width: 480px){
+    .sidebar{
+        display: none;
+    }
+    .button-mobile{
+        display: flex;
+    }
+    .main{
+        margin-left: 6px;
+    }
+    .etslogo {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/** Começo da Main **/
+
+.nome{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.materias{
+    margin-top: 80px !important;
+    padding-left: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+}
+
+.admat{
+    margin-right: 30px;
+
+}
+.add{
+    height: 20px;
+}
+/** cards **/
+.cor{
+    height: 100px !important;
+}
+
+.card-title{
+    text-align: center;
+}
+.card{
+    transition: all 0.4s;
+}
+.card:hover {
+    transform: scale(1.1);
+}
+

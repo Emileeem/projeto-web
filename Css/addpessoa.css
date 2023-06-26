@@ -1,33 +1,32 @@
-span{font-family: Calibri, sans-serif;}
-p{font-family: Calibri, sans-serif;}
-
-/** Header **/
-.header {
-    height: 2.6568vw;
-    padding: 0rem !important;
-    flex-wrap: nowrap !important;
-}
-
-.linha {
+/** Cabecalho **/
+.linha{
     background-image: url(../imagens/rainbow.svg);
     background-repeat: no-repeat;
-    height: 8px;
+    height: 10px;
     background-size: cover;
 }
+.cabeca {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+}
 
-.logo-inside {
-    width: 10vw;
+.etslogo {
+    width: 430px;
     display: flex;
     justify-content: center;
 }
-
-.nav-text{
-    color: rgb(230, 230, 230);
-    font-size: 1.4vw;
-    font-weight: bold;
-    font-family: Calibri, sans-serif;
+.eta{
+    height: 1%;
+    font-size: 20px;
 }
-
+.dash{
+    text-align: right;
+    padding: 2px;
+}
+.sair{
+    text-decoration: none;
+    color: black;
+}
 /** Menu **/
 
 *{
@@ -50,7 +49,7 @@ body{
 
 .sidebar{
     position: fixed;
-    top: 12%;
+    top: 17%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -159,6 +158,9 @@ body{
     .main{
         margin-left: 78px;
     }
+    .formulario{
+        width: 60% !important;
+    }
 }
 
 .button-mobile{
@@ -229,107 +231,19 @@ body{
         display: flex;
         justify-content: center;
     }
-}
-
-
-/** Main **/
-
-.main{
-    margin-top: 2vw;
-}
-
-.all-things{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.subject-box{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.subject-box-title{
-    background-color: rgb(143 84 111); 
-    width: min-content;
-    border-radius: 20px;
-    padding-right: 8vw;
-    padding-left: 8vw;
-}
-.subject-title {
-    color: rgb(255, 255, 255);
-    font-size: 5rem;
-    font-family: Calibri, sans-serif;
-    font-weight: bold;
-    margin: 0;
-}
-
-.media{
-    text-align: left;
-}
-
-.teste-img{
-    width: 60%;
-}
-
-.table>:not(caption)>*>* {
-    background-color: #f2f2f2 !important;
-}
-
-.dowload-button{
-    text-align: center;
-    border-style: none;
-    background-color: transparent;
-}
-
-@media (max-width: 425px) {
-    .header{
-        height: 15vw;
-        width: 100%;
-    }
-    .logo-inside {
-        width: 43vw;
-    }
-    .nav-text{
-        font-size: 6.8vw;
-    }
-    main{
-        margin-top: 7vw;
-    }
-    .subject-title {
-        font-size: 3.7rem;
-    }
-    .subject-box-title{
-        height: min-content;
-        width: min-content;
-        border-radius: 20px;
-        padding-right: 14vw;
-        padding-left: 14vw;
-    }
-    .title-media{
-        margin-top: 2%;
-        font-size: 1.2rem;
-        display: flex;
-    }
-
-    .teste-img{
-        width: 60%;
-    }
-    .table{
-        margin-top: 4vw;
-    }
-    td{
-        font-size: 81%;
-    }
-
-    .file-name{
-        font-size: 95%;
-    }
-
-    .icon-dowload{
-        width: 50%;
-        text-align: center;
+    .formulario{
+        width: 70% !important;
     }
 }
 
+/** **/
+
+.formulario{
+    width: 25% ;
+}
+
+@media(max-width: 1600px){
+    .formulario{
+        width: 40%;
+    }
+}

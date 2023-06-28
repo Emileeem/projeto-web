@@ -7,7 +7,7 @@ const login = require('./src/controllers/login');
 const add = require('./src/controllers/add');
 const materia = require('./src/controllers/materia');
 // Iniciando as rotas
-route.get('/', login.loginGet);
+route.get('/', login.loginGet).post('/', login.loginPost);
 
 route.get('/home', home.HomeAlunoGet);
 

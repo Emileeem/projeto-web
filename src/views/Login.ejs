@@ -46,28 +46,27 @@
     class="form-signin mt-5 formulario border-transparent shadow position-absolute top-50 start-50 translate-middle p-2  mb-4">
 
     <!-- <form action="/home" method="get" class="row g-7"> -->
-    <form action="/homeProf" method="get" class="row g-7">
-
+    <form action="/" method="post" class="row g-7">
       <h1 class="h3 m-2 mb-4 fw-normal logo">
         <img src="img/ets.png" alt="Logo Ets" class="image">
       </h1>
 
       <div class="col-12 col-sm-6 col-md-4 w-100 mb-3">
-        <label for="Sala" class="form-label">Cargo:</label>
-        <select name="sala" id="Sala" class="form-control" required>
+        <label for="cargo" class="form-label">Cargo:</label>
+        <select name="cargo" id="cargo" class="form-control" required>
           <option value="" disabled selected> Selecione </option>
-          <option value="" > Aprendiz </option>
-          <option value="" > Instrutor </option>
+          <option value="Aluno" > Aluno </option>
+          <option value="Professor" > Professor </option>
         </select>
       </div>
 
       <div class="form-floating col-12 col-sm-6 col-md-4 w-100 mb-4">
-        <input type="text" class="form-control border-secondary" id="floatingInput" placeholder="EDV" required>
-        <label for="floatingInput" class="form-label">EDV</label>
+        <input type="text" name="edv" class="form-control border-secondary" id="floatingInput" placeholder="EDV" required>
+        <label for="floatingInput" class="form-label" >EDV</label>
       </div>
 
       <div class="form-floating col-12 col-sm-6 col-md-4 w-100 mb-4">
-        <input type="password" class="form-control border-secondary" id="floatingPassword" placeholder="Senha" required>
+        <input type="password" name="senha" class="form-control border-secondary" id="floatingPassword" placeholder="Senha" required>
         <label for="floatingPassword" class="form-label">Senha</label>
       </div>
 

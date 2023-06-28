@@ -283,6 +283,7 @@ body{
     width: 50%;
 }
 
+/**chat **/
 .but{
     background-color: rgb(117, 186, 255);
     position: fixed;
@@ -303,6 +304,62 @@ body{
     top: -17px;
     font-weight: bold;
     padding: 5px;
+}
+/** nome materia **/
+.nome-mat {
+    z-index: 100;
+    background-color: rgb(93, 25, 114);
+    border: transparent 2px solid;
+    height: 80px;
+    font-size: 42px;
+    color: #FFF;
+    left: 0;
+    font-weight: bolder;
+}
+
+/**circulo de média **/
+
+.skill {
+    width: 160px;
+    height: 199px;
+    position: relative;
+    display: flex;
+}
+
+.fora {
+    height: 160px;
+    width: 160px;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+}
+
+.dentro {
+    background-color: white;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+        0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+        0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+}
+
+#number {
+    font-weight: 600;
+    color: #555;
+    font-size: 30px;
+}
+
+.media-turma {
+    text-align: center;
+    font-size: 28px;
 }
 @media (max-width: 425px) {
     header{
@@ -330,8 +387,9 @@ body{
     }
     .title-media{
         margin-top: 2%;
-        font-size: 1.2rem;
+        font-size: 25px;
         display: flex;
+        font-weight: bold;
     }
 
     .teste-img{
@@ -352,7 +410,26 @@ body{
         width: 50%;
         text-align: center;
     }
+    .nome-mat {
+        z-index: 100;
+        position: fixed;
+        background-color: rgb(93, 25, 114);
+        border: transparent 2px solid;
+        height: 55px;
+        font-size: 29px;
+        color: #FFF;
+        top: -6%;
+        left: 0;
+        font-weight: bolder;
+    }
+    .etslogo {
+        display: none;
+    }
+    .emyli{
+        display: none !important;
+    }
 }
+
 
 @media (min-width: 1000px){
     .logo-inside {

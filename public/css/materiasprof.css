@@ -344,6 +344,28 @@ body {
     }
 }
 
+/**chat **/
+.but{
+    background-color: rgb(117, 186, 255);
+    position: fixed;
+    top: 93%;
+    right: 3%;
+    border-radius: 15px;
+    border: transparent;
+    height: 50px;
+    width: 90px;
+}
+.chat{
+    font-size: 40px !important;
+    height: 30px;
+    width: 30px;
+}
+.escrita{
+    position: relative;
+    top: -17px;
+    font-weight: bold;
+    padding: 5px;
+}
 @media (max-width: 480px) {
     .nome-mat {
         z-index: 100;
@@ -389,14 +411,19 @@ body {
     .alunos {
         font-size: 25px;
     }
-    svg {
-        position: absolute;
-        top: 196px !important;
+    .but{
+        background-color: rgb(117, 186, 255);
+        position: fixed;
+        top: 89%;
+        right: 3%;
+        border-radius: 15px;
+        border: transparent;
+        height: 40px;
+        width: 70px;
     }
-}
-
-@media (max-width: 320px) {
-    svg, circle {
-        top: 27.5% !important;
+    .chat{
+        font-size: 30px !important;
+        height: 30px;
+        width: 30px;
     }
 }

@@ -53,6 +53,7 @@
         </div>
     </nav>
 
+  
     <!-- Menu com click -->
 
     <aside class="sidebar shadow">
@@ -64,12 +65,15 @@
             <span><b class="edv">EDV:92902064</b></span>
         </span>
         <nav>
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> home </i>
-                    <span>Início</span>
-                </span>
-            </button>
+            <form action="/homeprof" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> home </i>
+                        <span>Início</span>
+                    </span>
+                </button>
+            </form>
+
 
             <button>
                 <span>
@@ -77,6 +81,31 @@
                     <span>Calendário</span>
                 </span>
             </button>
+            <form action="/addAluno" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> school </i>
+                        <span>Adicionar Aluno</span>
+                    </span>
+                </button>
+            </form>
+            <form action="/addProf" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> person_add </i>
+                        <span>Adicionar Instrutor</span>
+                    </span>
+                </button>
+            </form>
+
+            <form action="/addTurma" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> group_add </i>
+                        <span>Adicionar Nova Turma</span>
+                    </span>
+                </button>
+            </form>
 
             <button>
                 <span>
@@ -89,7 +118,7 @@
 
     </aside>
     <!-- Menu p celular -->
-    <button class="mt-5 button-mobile" onclick="toggleMenu()">
+    <button class="button-mobile" onclick="toggleMenu()">
         <i class="material-symbols-outlined"> menu </i>
         <span><b class="">Menu</b></span>
     </button>
@@ -101,12 +130,14 @@
             </span>
         </button>
 
-        <button>
-            <span>
-                <i class="material-symbols-outlined"> home </i>
-                <span class="mobile-text">Início</span>
-            </span>
-        </button>
+        <form action="/homeprof" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> home </i>
+                    <span class="mobile-text">Início</span>
+                </span>
+            </button>
+        </form>
 
         <button>
             <span>
@@ -115,20 +146,31 @@
             </span>
         </button>
 
-        <button>
-            <span>
-                <i class="material-symbols-outlined"> person_add </i>
-                <span>Adicionar Instrutor/Aluno</span>
-            </span>
-        </button>
+        <form action="/addAluno" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> school </i>
+                    <span class="mobile-text">Adicionar Aluno</span>
+                </span>
+            </button>
+        </form>
 
-        <button>
-            <span>
-                <i class="material-symbols-outlined"> person_add </i>
-                <span class="mobile-text">Adicionar Instrutor/Aluno</span>
-            </span>
-        </button>
-
+        <form action="/addProf" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> person_add </i>
+                    <span class="mobile-text">Adicionar Instrutor</span>
+                </span>
+            </button>
+        </form>
+        <form action="/addTurma" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> group_add </i>
+                    <span class="mobile-text">Adicionar Turma</span>
+                </span>
+            </button>
+        </form>
         <button>
             <span>
                 <i class="material-symbols-outlined"> Logout </i>
@@ -136,6 +178,7 @@
             </span>
         </button>
     </nav>
+
     <main class="main">
         <!--Título da matéria -->
         <div class="nome-mat w-100 text-center mt-5 mb-5 shadow">

@@ -54,6 +54,7 @@
     </nav>
     <!-- -------- -->
 
+    
     <!-- Menu com click -->
 
     <aside class="sidebar shadow">
@@ -65,12 +66,14 @@
             <span><b class="edv">EDV:92902064</b></span>
         </span>
         <nav>
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> home </i>
-                    <span>Início</span>
-                </span>
-            </button>
+            <form action="/homeprof" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> home </i>
+                        <span>Início</span>
+                    </span>
+                </button>
+            </form>
 
             <button>
                 <span>
@@ -78,12 +81,31 @@
                     <span>Calendário</span>
                 </span>
             </button>
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> person_add </i>
-                    <span>Adicionar Instrutor/Aluno</span>
-                </span>
-            </button>
+            <form action="/addAluno" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> school </i>
+                        <span>Adicionar Aluno</span>
+                    </span>
+                </button>
+            </form>
+            <form action="/addProf" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> person_add </i>
+                        <span>Adicionar Instrutor</span>
+                    </span>
+                </button>
+            </form>
+
+            <form action="/addTurma" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> group_add </i>
+                        <span>Adicionar Nova Turma</span>
+                    </span>
+                </button>
+            </form>
 
             <button>
                 <span>
@@ -108,12 +130,14 @@
             </span>
         </button>
 
-        <button>
-            <span>
-                <i class="material-symbols-outlined"> home </i>
-                <span class="mobile-text">Início</span>
-            </span>
-        </button>
+        <form action="/homeprof" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> home </i>
+                    <span class="mobile-text">Início</span>
+                </span>
+            </button>
+        </form>
 
         <button>
             <span>
@@ -122,13 +146,31 @@
             </span>
         </button>
 
-        <button>
-            <span>
-                <i class="material-symbols-outlined"> person_add </i>
-                <span class="mobile-text">Adicionar Instrutor/Aluno</span>
-            </span>
-        </button>
+        <form action="/addAluno" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> school </i>
+                    <span class="mobile-text">Adicionar Aluno</span>
+                </span>
+            </button>
+        </form>
 
+        <form action="/addProf" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> person_add </i>
+                    <span class="mobile-text">Adicionar Instrutor</span>
+                </span>
+            </button>
+        </form>
+        <form action="/addTurma" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> group_add </i>
+                    <span class="mobile-text">Adicionar Turma</span>
+                </span>
+            </button>
+        </form>
         <button>
             <span>
                 <i class="material-symbols-outlined"> Logout </i>
@@ -136,12 +178,11 @@
             </span>
         </button>
     </nav>
-    <main class="main">
 
         <!-- Cadastro Aluno/Professor -->
         <div class="form-signin formulario shadow position-absolute top-50 start-50 translate-middle p-2 mb-4 mt-4">
 
-            <form class="row g-7">
+            <form class="row g-7" action = "/addAluno" method="post">
 
                 <h2 class="text-center mt-4 mb-4">
                     Cadastro novo Aluno
@@ -159,11 +200,6 @@
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 w-50 mb-4">
-                    <label class="form-label">Nome Completo:</label>
-                    <input type="text" class="form-control" placeholder="Nome" required name="Nome">
-                </div>
-                
-                <div class="col-12 col-sm-6 col-md-4 w-50 mb-4">
                     <label class="form-label">Turma:</label>
                     <select name="cargo" id="cargo" class="form-control" required>
                         <option value="" disabled selected> Selecione </option>
@@ -172,6 +208,16 @@
                         <% } %>
                            
                     </select>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 w-50 mb-4">
+                    <label class="form-label">Nome Completo:</label>
+                    <input type="text" class="form-control" placeholder="Nome" required name="Nome">
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 w-50 mb-4">
+                    <label class="form-label">Senha:</label>
+                    <input type="password" class="form-control" placeholder="Senha" required name="Senha">
                 </div>
 
                 <div class="col-12 w-100 col-md-4 butao mb-4">

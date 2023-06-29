@@ -43,8 +43,10 @@ module.exports = {
         let foto = '../img/usuario.png';
 
         await aluno.create({
-            EDV: dados.IDAluno,
+            IDAluno: dados.EDV,
             Nome: dados.Nome,
+            Senha: dados.Senha,
+            Foto: foto
         });
 
         //Redirecionando para a página inicial

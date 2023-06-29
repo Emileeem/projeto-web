@@ -6,7 +6,6 @@ const materia = require('./materia');
 const professor = require('./professor');
 
 //Criando tabela
-
 const turmaMateria = database.define('TurmaMateria', {
     IDTurmaMateria: {
         type: Sequelize.INTEGER,

@@ -65,12 +65,14 @@
             <span><b class="edv">EDV:92902064</b></span>
         </span>
         <nav>
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> home </i>
-                    <span>Início</span>
-                </span>
-            </button>
+            <form action="/homeprof" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> home </i>
+                        <span>Início</span>
+                    </span>
+                </button>
+            </form>
 
             <button>
                 <span>
@@ -87,21 +89,21 @@
                 </button>
             </form>
             <form action="/addProf" method="get">
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> person_add </i>
-                    <span>Adicionar Instrutor</span>
-                </span>
-            </button>
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> person_add </i>
+                        <span>Adicionar Instrutor</span>
+                    </span>
+                </button>
             </form>
 
             <form action="/addTurma" method="get">
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> group_add </i>
-                    <span>Adicionar Nova Turma</span>
-                </span>
-            </button>
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> group_add </i>
+                        <span>Adicionar Nova Turma</span>
+                    </span>
+                </button>
             </form>
 
             <button>
@@ -127,13 +129,15 @@
             </span>
         </button>
 
-        <button>
-            <span>
-                <i class="material-symbols-outlined"> home </i>
-                <span class="mobile-text">Início</span>
-            </span>
-        </button>
-
+        <form action="/homeprof" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> home </i>
+                    <span class="mobile-text">Início</span>
+                </span>
+            </button>
+        </form>
+        
         <button>
             <span>
                 <i class="material-symbols-outlined"> calendar_month </i>
@@ -141,13 +145,31 @@
             </span>
         </button>
 
-        <button>
-            <span>
-                <i class="material-symbols-outlined"> person_add </i>
-                <span class="mobile-text">Adicionar Instrutor/Aluno</span>
-            </span>
-        </button>
+        <form action="/addAluno" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> school </i>
+                    <span class="mobile-text">Adicionar Aluno</span>
+                </span>
+            </button>
+        </form>
 
+        <form action="/addProf" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> person_add </i>
+                    <span class="mobile-text">Adicionar Instrutor</span>
+                </span>
+            </button>
+        </form>
+        <form action="/addTurma" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> group_add </i>
+                    <span class="mobile-text">Adicionar Turma</span>
+                </span>
+            </button>
+        </form>
         <button>
             <span>
                 <i class="material-symbols-outlined"> Logout </i>
@@ -156,9 +178,11 @@
         </button>
     </nav>
 
+    <!-- Main -->
     <main class="main">
         <div class="mt-4">
-            <h1 class="nome"> Bem vindo(a) <%= DBedv.Nome %>! </h1>
+            <h1 class="nome"> Bem vindo(a) <%= DBedv.Nome %>!
+            </h1>
         </div>
         <div class="mt-4">
             <h2 class="materias"> Suas Matérias:</h2>

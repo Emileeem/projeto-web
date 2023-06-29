@@ -3,6 +3,7 @@ const Sequelize = require('sequelize');
 const database = require('../config/db');
 const turma = require('./turma');
 const materia = require('./materia');
+const professor = require('./professor');
 
 //Criando tabela
 
@@ -23,6 +24,11 @@ turmaMateria.belongsTo(turma, {
 turmaMateria.belongsTo(materia, {
     constraint: true,
     foreingKey: 'IDMateria'
+});
+
+turmaMateria.belongsTo(professor, {
+    constraint: true,
+    foreingKey: 'IDProfessor'
 });
 
 module.exports = turmaMateria;

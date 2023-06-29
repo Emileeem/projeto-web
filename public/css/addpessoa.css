@@ -247,3 +247,27 @@ body{
         width: 40%;
     }
 }
+
+/** foto **/
+.foto {
+    display: flex;
+    place-content: center;
+}
+.fotousu {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+    transition: 0.3s;    
+}
+.fotousu:hover {
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.eta {
+    display: none;
+}
+
+

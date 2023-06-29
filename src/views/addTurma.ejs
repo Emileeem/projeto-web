@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Início</title>
+    <title>Adicionar Sala</title>
 
     <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!-- Css -->
-    <link rel="stylesheet" href="css/homeprof.css">
+    <link rel="stylesheet" href="css/addmat.css">
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,7 @@
     <nav class="navbar shadow bg-body-tertiary mt-2">
         <div class="container-fluid">
             <a class="cabeca navbar-brand" href="#">
-                <img src="img/logo_ets.png" alt="logo bosch-ets" class="etslogo">
+                <img src="../imagens/logo_ets.png" alt="logo bosch-ets" class="etslogo">
             </a>
         </div>
     </nav>
@@ -78,31 +78,6 @@
                     <span>Calendário</span>
                 </span>
             </button>
-            <form action="/addAluno" method="get">
-                <button>
-                    <span>
-                        <i class="material-symbols-outlined"> school </i>
-                        <span>Adicionar Aluno</span>
-                    </span>
-                </button>
-            </form>
-            <form action="/addProf" method="get">
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> person_add </i>
-                    <span>Adicionar Instrutor</span>
-                </span>
-            </button>
-            </form>
-
-            <form action="/addTurma" method="get">
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> group_add </i>
-                    <span>Adicionar Nova Turma</span>
-                </span>
-            </button>
-            </form>
 
             <button>
                 <span>
@@ -144,6 +119,20 @@
         <button>
             <span>
                 <i class="material-symbols-outlined"> person_add </i>
+                <span>Adicionar Aluno</span>
+            </span>
+        </button>
+
+        <button>
+            <span>
+                <i class="material-symbols-outlined"> person_add </i>
+                <span>Adicionar Instrutor</span>
+            </span>
+        </button>
+
+        <button>
+            <span>
+                <i class="material-symbols-outlined"> person_add </i>
                 <span class="mobile-text">Adicionar Instrutor/Aluno</span>
             </span>
         </button>
@@ -157,56 +146,34 @@
     </nav>
 
     <main class="main">
-        <div class="mt-4">
-            <h1 class="nome"> Bem vindo(a) S/n! </h1>
-        </div>
-        <div class="mt-4">
-            <h2 class="materias"> Suas Matérias:</h2>
-        </div>
-        <div class="position-absolute end-0 m-2">
-            <button class="btn btn-secondary admat">
-                <span>
-                    <i class="material-symbols-outlined add"> Add </i>
-                    <span>Adicionar Matéria</span>
-                </span>
-            </button>
-        </div>
-        <!-- Cards com Matérias -->
+        <!-- Cadastro Arquivo -->
+        <div
+            class="form-signin mt-5 formulario border-transparent shadow position-absolute top-50 start-50 translate-middle p-2  mb-4">
 
-        <div class="row m-4">
-            <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
-                <div class="shadow card h-100 ">
-                    <img src="img/roxo.png" class="col-2 img-fluid card-img-top cor" alt="cor sala">
-                    <div class="card-body">
-                        <h5 class="card-title"> Python</h5>
-                    </div>
+            <form class="row g-7">
+
+                <h2 class = "text-center mt-4 mb-4">
+                    Criando nova Turma
+                </h2>
+                
+                <div class="col-12 col-sm-6 col-md-4 w-100 mb-4">
+                    <label class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Título" required name="Nome">
+                </div> 
+
+                <div class="col-12 w-100 col-md-4 butao mb-4">
+                    <input class="btn btn-primary w-100" type="submit" value="Enviar">
                 </div>
-            </div>
 
-
-            <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
-                <div class="shadow card h-100 ">
-                    <img src="img/verde.jpg" class="col-2 img-fluid card-img-top cor" alt="cor sala">
-                    <div class="card-body">
-                        <h5 class="card-title"> IOT</h5>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
-                <div class="shadow card h-100 ">
-                    <img src="img/azul.png" class="col-2 img-fluid card-img-top cor" alt="cor sala">
-                    <div class="card-body">
-                        <h5 class="card-title"> C#</h5>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+                <a href="#" class = "volta">
+                    <span>
+                        <i class="material-symbols-outlined voltar1">undo</i>
+                        <span class="voltar">Voltar</span>
+                    </span>
+                </a>
+            </form>
     </main>
-
-    <script src="js/menu.js"></script>
+    <script src="../JavaScript/menu.js"></script>
 </body>
 
 </html>

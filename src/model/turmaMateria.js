@@ -5,29 +5,29 @@ const turma = require('./turma');
 const materia = require('./materia');
 const professor = require('./professor');
 
-//Criando tabela
+// Criando tabela
 const turmaMateria = database.define('TurmaMateria', {
-    IDTurmaMateria: {
-        type: Sequelize.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true
-    }
+  IDTurmaMateria: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    allowNull: false,
+    primaryKey: true
+  }
 });
 
 turmaMateria.belongsTo(turma, {
-    constraint: true,
-    foreingKey: 'IDTurma'
+  constraint: true,
+  foreignKey: 'IDTurma' // Corrigido: foreignKey, não foreingKey
 });
 
 turmaMateria.belongsTo(materia, {
-    constraint: true,
-    foreingKey: 'IDMateria'
+  constraint: true,
+  foreignKey: 'IDMateria' // Corrigido: foreignKey, não foreingKey
 });
 
 turmaMateria.belongsTo(professor, {
-    constraint: true,
-    foreingKey: 'IDProfessor'
+  constraint: true,
+  foreignKey: 'IDProfessor' // Corrigido: foreignKey, não foreingKey
 });
 
 module.exports = turmaMateria;

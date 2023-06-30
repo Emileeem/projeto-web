@@ -39,13 +39,13 @@ module.exports = {
                 //     where: [professor.edv = edv]
                 // });
 
-                const TMateria = await materia.findAll({
+                const TMateria = await turmaMateria.findAll({
                     raw: true,
                     where: {
                         IDProfessor: edv,
                     },
                     include: [{
-                        model: turmaMateria 
+                        model: materia
                     }] 
                 });
                 console.log(TMateria)

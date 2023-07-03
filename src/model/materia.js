@@ -16,4 +16,9 @@ const materia = database.define('Materia', {
     }
 });
 
+materia.belongsTo(professor, {
+    constraint: true,
+    foreignKey: 'IDProfessor' // Corrigido: foreignKey, não foreingKey
+  });
+
 module.exports = materia;

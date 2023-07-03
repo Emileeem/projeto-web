@@ -12,16 +12,18 @@ route.get('/', login.loginGet).post('/', login.loginPost);
 
 route.get('/home', home.HomeAlunoGet);
 
-route.get('/homeprof', home.HomeProfGet);
+route.get('/homeprof/:IDProfessor', home.HomeProfGet);
 
 route.get('/addPdf', add.AddPdfGet);
 
 route.get('/materia', materia.materiaGet);
 
-route.get('/addAluno', cadastro.alunoGet).post('/addAluno', cadastro.alunoInsert);
+route.get('/addAluno/:IDProfessor', cadastro.alunoGet).post('/addAluno/:IDProfessor', cadastro.alunoInsert);
 
-route.get('/addTurma', cadastro.turmaGet).post('/addTurma', cadastro.turmaInsert);
+route.get('/addTurma/:IDProfessor', cadastro.turmaGet).post('/addTurma/:IDProfessor', cadastro.turmaInsert);
 
 route.get('/addProf', cadastro.professorGet).post('/addProf', cadastro.professorInsert);
+
+route.get('/addMateria/:IDProfessor', add.addMateriaGet).post('/addMateria/:IDProfessor', add.addMateriaPost)
 
 module.exports = route;

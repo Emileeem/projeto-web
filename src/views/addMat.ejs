@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!-- Css -->
-    <link rel="stylesheet" href="addmat.css">
+    <link rel="stylesheet" href="/css/addmat.css">
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,7 @@
     <nav class="navbar shadow bg-body-tertiary mt-2">
         <div class="container-fluid">
             <a class="cabeca navbar-brand" href="#">
-                <img src="../imagens/logo_ets.png" alt="logo bosch-ets" class="etslogo">
+                <img src="/img/logo_ets.png" alt="logo bosch-ets" class="etslogo">
             </a>
         </div>
     </nav>
@@ -185,29 +185,31 @@
         <div
             class="form-signin mt-5 formulario border-transparent shadow position-absolute top-50 start-50 translate-middle p-2  mb-4">
 
-            <form class="row g-7">
-
-                <h2 class = "text-center mt-4 mb-4">
-                    Criando nova Matéria
-                </h2>
-                
+            
+            <h2 class = "text-center mt-4 mb-4">
+                Criando nova Matéria
+            </h2>
+            
+            <form class="row g-7" action="/addMateria/<%= DBedv.IDProfessor %>" method="post">
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-4">
                     <label class="form-label">Nome</label>
                     <input type="text" class="form-control" placeholder="Título" required>
                 </div>
                 
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-3">
-                    <label for="Sala" class="form-label">Turma:</label>
-                    <select name="sala" id="Sala" class="form-control" required>
-                        <option value="" disabled selected> Selecione </option>
-                        <option value=""> TDS1 </option>
-                        <option value=""> TDS2 </option>
+                    <label class="form-label">Turma:</label>
+                    <select name="Turma" id="" class="form-control" required>
+                        <option disabled selected> Selecione </option>
+                        <% for (let i=0; i<turmas.length; i++) { %>
+                            <option value='<%= turmas[i].IDTurma %>'> <%= turmas[i].Nome %> </option>
+                        <% } %>
                     </select>
                 </div>
 
                 <div class="col-12 w-100 col-md-4 butao mb-4">
                     <input class="btn btn-primary w-100" type="submit" value="Enviar">
                 </div>
+            </form>
 
                 <a href="#" class = "volta">
                     <span>
@@ -215,7 +217,6 @@
                         <span class="voltar">Voltar</span>
                     </span>
                 </a>
-            </form>
     </main>
     <script src="../JavaScript/menu.js"></script>
 </body>

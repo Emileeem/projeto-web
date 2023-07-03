@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!-- Css -->
-    <link rel="stylesheet" href="css/addmat.css">
+    <link rel="stylesheet" href="/css/addmat.css">
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -185,7 +185,7 @@
         <div
             class="form-signin mt-5 formulario border-transparent shadow position-absolute top-50 start-50 translate-middle p-2  mb-4">
 
-            <form class="row g-7" action = "/addTurma" method="post">
+            <form class="row g-7" action = "/addTurma/<%= DBedv.IDProfessor %>" method="post">
 
                 <h2 class = "text-center mt-4 mb-4">
                     Criando nova Turma
@@ -193,7 +193,7 @@
                 
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-4">
                     <label class="form-label">Nome</label>
-                    <input type="text" class="form-control" placeholder="Título" required name="Nome">
+                    <input type="text" class="form-control" placeholder="" required name="Nome">
                 </div> 
 
                 <div class="col-12 w-100 col-md-4 butao mb-4">

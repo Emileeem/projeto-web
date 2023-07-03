@@ -1,15 +1,19 @@
 //importando as tabelas do banco de dados
 const turma = require('../model/turma');
 const aluno = require('../model/aluno');
-const prof = require('../model/professor');
+const professor = require('../model/professor');
 
 module.exports = {
     async turmaGet(req, res) {
-        res.render('../views/addTurma');
+        const DBedv = await professor.findByPk(req.params.IDProfessor, {
+            raw: true,
+            attributes: ['IDProfessor', 'Nome', 'Senha', 'Foto']
+        });
+        console.log(req.params.IDProfessor);
+        res.render('../views/addTurma', {DBedv});
     },
 
     async turmaInsert(req, res) {
-
         //recebendo informações do front-end(ou seja, o que o usuário digitar)
         const dados = req.body;
 
@@ -19,23 +23,26 @@ module.exports = {
         });
 
         // Redirecionando para a página principal
-        res.render('../views/HomeProf')
+        res.redirect(`/homeprof/${req.params.IDProfessor}`)
     },
 
     async alunoGet(req, res) {
-
-        //Encontrando as salas disponíveis no sql para a FK da tabela
         const turmas = await turma.findAll({
             raw: true, //retorna informações da tabela sem metadados.
             attributes: ['IDTurma', 'Nome']
         });
 
+        const DBedv = await professor.findByPk(req.params.IDProfessor, {
+            raw: true,
+            attributes: ['IDProfessor', 'Nome', 'Senha', 'Foto']
+        });
+        console.log(DBedv);
         //passando o nome das salas para o front
-        res.render('../views/AddAluno', { turmas })
+        res.render('../views/AddAluno', { turmas, DBedv })
     },
 
     async alunoInsert(req, res) {
-
+        console.log(req.params.IDProfessor)
         //Recebendo os dados do aluno pelo Body
         const dados = req.body;
 
@@ -46,11 +53,12 @@ module.exports = {
             IDAluno: dados.EDV,
             Nome: dados.Nome,
             Senha: dados.Senha,
-            Foto: foto
+            Foto: foto,
+            IDTurma: dados.Turma
         });
 
         //Redirecionando para a página inicial
-        res.render('../views/HomeProf')
+        res.redirect(`/homeprof/${req.params.IDProfessor}`);
     },
 
     async professorGet(req, res) {
@@ -63,7 +71,7 @@ module.exports = {
         console.log(dados)
         let foto = '../img/usuario.png';
 
-        await prof.create({
+        await professor.create({
             IDProfessor: dados.EDV,
             Nome: dados.name,
             Senha: dados.senha,

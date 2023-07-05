@@ -1,5 +1,9 @@
 db: PortalAlunos
+
 login: admin
 senha: admin1234567
-
 porta: 1433
+
+login: disrct
+senha: etstech31415
+porta: 57136

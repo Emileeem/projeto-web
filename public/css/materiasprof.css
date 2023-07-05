@@ -1,6 +1,6 @@
 /** Cabecalho **/
 .linha {
-    background-image: url(rainbow.svg);
+    background-image: url(../img/rainbow.svg);
     background-repeat: no-repeat;
     height: 10px;
     background-size: cover;

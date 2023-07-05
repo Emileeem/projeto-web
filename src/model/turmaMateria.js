@@ -25,9 +25,4 @@ turmaMateria.belongsTo(materia, {
   foreignKey: 'IDMateria' // Corrigido: foreignKey, não foreingKey
 });
 
-turmaMateria.belongsTo(professor, {
-  constraint: true,
-  foreignKey: 'IDProfessor' // Corrigido: foreignKey, não foreingKey
-});
-
 module.exports = turmaMateria;

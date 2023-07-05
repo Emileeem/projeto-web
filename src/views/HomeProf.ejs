@@ -65,7 +65,7 @@
             <span><b class="edv">EDV:<%= DBedv.IDProfessor %></b></span>
         </span>
         <nav>
-            <form action="/homeprof" method="get">
+            <form action="/homeprof/<%= DBedv.IDProfessor %>" method="get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> home </i>
@@ -88,7 +88,7 @@
                     </span>
                 </button>
             </form>
-            <form action="/addProf" method="get">
+            <form action="/addProf/<%= DBedv.IDProfessor %>" method="get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> person_add </i>
@@ -129,7 +129,7 @@
             </span>
         </button>
 
-        <form action="/homeprof" method="get">
+        <form action="/homeprof/<%= DBedv.IDProfessor %>" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> home </i>
@@ -145,7 +145,7 @@
             </span>
         </button>
 
-        <form action="/addAluno" method="get">
+        <form action="/addAluno/<%= DBedv.IDProfessor %>" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> school </i>
@@ -154,7 +154,7 @@
             </button>
         </form>
 
-        <form action="/addProf" method="get">
+        <form action="/addProf/<%= DBedv.IDProfessor %>" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> person_add </i>
@@ -198,20 +198,22 @@
             </form>
         </div>
         <!-- Cards com Matérias -->
-        <% for (let i=0; i<TMateria.length; i++) { %>
-            <div class="row m-4">
+        <div class="row m-4">
+            <% for (let i=0; i<Materia.length; i++) { %>
                 <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
-                    <div class="shadow card h-100 ">
-                        <img src="/img/roxo.png" class="col-2 img-fluid card-img-top cor" alt="cor sala">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%= TMateria.Nome %>
-                            </h5>
+                    <a href="/materiaProf">
+                        <div class="shadow card h-100 ">
+                            <img src="/img/roxo.png" class="col-2 img-fluid card-img-top cor" alt="cor sala">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= Materia[i].Nome %>
+                                </h5>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <% } %>
-            </div>
+        </div>
     </main>
 
     <script src="/js/menu.js"></script>

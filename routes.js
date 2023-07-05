@@ -10,7 +10,7 @@ const cadastro = require('./src/controllers/cadastro')
 // Iniciando as rotas
 route.get('/', login.loginGet).post('/', login.loginPost);
 
-route.get('/home', home.HomeAlunoGet);
+route.get('/home/:IDAluno', home.HomeAlunoGet);
 
 route.get('/homeprof/:IDProfessor', home.HomeProfGet);
 
@@ -18,11 +18,13 @@ route.get('/addPdf', add.AddPdfGet);
 
 route.get('/materia', materia.materiaGet);
 
+route.get('/materiaProf', materia.materiaProfGet);
+
 route.get('/addAluno/:IDProfessor', cadastro.alunoGet).post('/addAluno/:IDProfessor', cadastro.alunoInsert);
 
 route.get('/addTurma/:IDProfessor', cadastro.turmaGet).post('/addTurma/:IDProfessor', cadastro.turmaInsert);
 
-route.get('/addProf', cadastro.professorGet).post('/addProf', cadastro.professorInsert);
+route.get('/addProf/:IDProfessor', cadastro.professorGet).post('/addProf/:IDProfessor', cadastro.professorInsert);
 
 route.get('/addMateria/:IDProfessor', add.addMateriaGet).post('/addMateria/:IDProfessor', add.addMateriaPost)
 

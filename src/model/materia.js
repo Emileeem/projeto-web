@@ -8,7 +8,8 @@ const materia = database.define('Materia', {
     IDMateria: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
     },
     Nome: {
         type: Sequelize.STRING(50),

@@ -27,5 +27,14 @@ module.exports = {
                 res.redirect(`/homeprof/${DBedv.IDProfessor}`);
             }
         }
+        else {
+            const DBedv = await aluno.findByPk(edv, {
+                raw: true,
+                attributes: ['IDAluno', 'Nome', 'Senha', 'Foto']
+            });
+            if (DBedv.Senha == senha) {
+                res.redirect(`/home/${DBedv.IDAluno}`);
+            }
+        }
     }
 }

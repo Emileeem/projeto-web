@@ -42,7 +42,6 @@ module.exports = {
     },
 
     async alunoInsert(req, res) {
-        console.log(req.params.IDProfessor)
         //Recebendo os dados do aluno pelo Body
         const dados = req.body;
 
@@ -62,7 +61,11 @@ module.exports = {
     },
 
     async professorGet(req, res) {
-        res.render('../views/AddProf');
+        const DBedv = await professor.findByPk(req.params.IDProfessor, {
+            raw: true,
+            attributes: ['IDProfessor', 'Nome', 'Senha', 'Foto']
+        });
+        res.render('../views/AddProf', {DBedv});
     },
 
     async professorInsert(req, res) {
@@ -73,12 +76,12 @@ module.exports = {
 
         await professor.create({
             IDProfessor: dados.EDV,
-            Nome: dados.name,
-            Senha: dados.senha,
+            Nome: dados.Nome,
+            Senha: dados.Senha,
             Foto: foto
         });
 
         //Redirecionando para a página inicial
-        res.render('../views/HomeProf')
+        res.redirect(`/homeprof/${req.params.IDProfessor}`);
     }
 }

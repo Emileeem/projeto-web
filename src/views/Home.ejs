@@ -77,7 +77,6 @@
                     <span>Sair</span>
                 </span>
             </button>
-
         </nav>
 
     </aside>
@@ -126,35 +125,16 @@
         <!-- Cards com Matérias -->
 
         <div class="row m-4">
-            <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
-                <div class="shadow card h-100 ">
-                    <img src="/img/roxo.png" class="col-2 img-fluid card-img-top cor" alt="cor sala">
-                    <div class="card-body">
-                        <h5 class="card-title"> Python</h5>
+            <% for (let i=0; i<TurmaMateria.length; i++) {%>
+                <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
+                    <div class="shadow card h-100 ">
+                        <img src="/img/roxo.png" class="col-2 img-fluid card-img-top cor" alt="cor sala">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= TurmaMateria[i].Nome %></h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-
-            <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
-                <div class="shadow card h-100 ">
-                    <img src="/img/verde.jpg" class="col-2 img-fluid card-img-top cor" alt="cor sala">
-                    <div class="card-body">
-                        <h5 class="card-title"> IOT</h5>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
-                <div class="shadow card h-100 ">
-                    <img src="/img/azul.png" class="col-2 img-fluid card-img-top cor" alt="cor sala">
-                    <div class="card-body">
-                        <h5 class="card-title"> C#</h5>
-                    </div>
-                </div>
-            </div>
-
+            <%}%>
         </div>
     </main>
 

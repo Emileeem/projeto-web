@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário</title>
+
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Simbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!-- Css -->
+    <link rel="stylesheet" href="calendProf.css">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@500&display=swap"
+        rel="stylesheet">
+
+    <!-- Calendário -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <div class="linha"> .</div>
+    <header class="border-bottom bg-body-secondary eta">
+        <div class="dash">
+            <b>Dashboard</b>
+            <a href="#" class="sair">
+                <i class="material-symbols-outlined m-2"> Logout </i>
+            </a>
+        </div>
+    </header>
+
+    <nav class="navbar shadow bg-body-tertiary mt-2">
+        <div class="container-fluid">
+            <a class="cabeca navbar-brand" href="#">
+                <img src="/img/logo_ets.png" alt="logo bosch-ets" class="etslogo">
+            </a>
+        </div>
+    </nav>
+    <!-- -------- -->
+
+
+    <!-- Menu com click -->
+
+    <aside class="sidebar shadow">
+        <header class="sidebarheader">
+            <img class="logo-img" src="https://sujeitoprogramador.com/steve.png" alt="foto do usuario">
+        </header>
+        <span class="edv2">
+            <i class="material-symbols-outlined"> badge </i>
+            <span><b class="edv">EDV:92902064</b></span>
+        </span>
+        <nav>
+            <form action="/homeprof" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> home </i>
+                        <span>Início</span>
+                    </span>
+                </button>
+            </form>
+
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> calendar_month </i>
+                    <span>Calendário</span>
+                </span>
+            </button>
+            <form action="/addAluno" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> school </i>
+                        <span>Adicionar Aluno</span>
+                    </span>
+                </button>
+            </form>
+            <form action="/addProf" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> person_add </i>
+                        <span>Adicionar Instrutor</span>
+                    </span>
+                </button>
+            </form>
+
+            <form action="/addTurma" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> group_add </i>
+                        <span>Adicionar Nova Turma</span>
+                    </span>
+                </button>
+            </form>
+
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> Logout </i>
+                    <span>Sair</span>
+                </span>
+            </button>
+
+        </nav>
+
+    </aside>
+    <!-- Menu p celular -->
+    <button class="button-mobile" onclick="toggleMenu()">
+        <i class="material-symbols-outlined"> menu </i>
+        <span><b class="">Menu</b></span>
+    </button>
+
+    <nav class="menu-mobile" id="menu-mobile">
+        <button class="close" onclick="toggleMenu()">
+            <span>
+                <i class="material-symbols-outlined"> close </i>
+            </span>
+        </button>
+
+        <form action="/homeprof" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> home </i>
+                    <span class="mobile-text">Início</span>
+                </span>
+            </button>
+        </form>
+
+        <button>
+            <span>
+                <i class="material-symbols-outlined"> calendar_month </i>
+                <span class="mobile-text">Calendário</span>
+            </span>
+        </button>
+
+        <form action="/addAluno" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> school </i>
+                    <span class="mobile-text">Adicionar Aluno</span>
+                </span>
+            </button>
+        </form>
+
+        <form action="/addProf" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> person_add </i>
+                    <span class="mobile-text">Adicionar Instrutor</span>
+                </span>
+            </button>
+        </form>
+        <form action="/addTurma" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> group_add </i>
+                    <span class="mobile-text">Adicionar Turma</span>
+                </span>
+            </button>
+        </form>
+        <button>
+            <span>
+                <i class="material-symbols-outlined"> Logout </i>
+                <span class="mobile-text">Sair</span>
+            </span>
+        </button>
+    </nav>
+
+    <main class="main m-4">
+        <h2>
+            <center> Calendário Turma </center>
+        </h2><br />
+        <select class="form-select w-25 m-4 shadow selecione" aria-label="Default select example">
+            <option selected>Selecione a turma:</option>
+            <option value="1">One</option>
+        </select>
+        <div class="container mt-4 calendar">
+            <div id="calendar" class="mt-4"></div>
+        </div>
+
+        <div class="modal" tabindex="-10" role="dialog" id="modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Adicionando Evento</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="" method="post">
+
+                        <div class="modal-body">
+                            Título:
+                            <input type="text" class="form-control w-100 p-2" name="Titulo" id="titulo">
+                            Data Início:
+                            <input type="date" class="form-control w-100 p-2" name="DataIni" id="inicio">
+                            Data Final:
+                            <input type="date" class="form-control w-100 p-2" name="DataFim" id="final">
+                            
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/menu.js"></script>
+    <script src="js/cadastrarAluno.js"></script>
+    <!--Calendário -->
+    <script src="calendarioProf.js"></script>
+    <script src = "locales/pt-br.js"></script>
+    <!-- Fecha Modal -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Inicializa os componentes do Bootstrap
+            var modals = document.querySelectorAll('.modal');
+            var modalCloseButtons = document.querySelectorAll('[data-dismiss="modal"]');
+    
+            modals.forEach(function(modal) {
+                new bootstrap.Modal(modal);
+            });
+    
+            modalCloseButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var modal = button.closest('.modal');
+                    var modalInstance = bootstrap.Modal.getInstance(modal);
+                    modalInstance.hide();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

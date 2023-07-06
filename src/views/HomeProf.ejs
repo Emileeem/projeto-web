@@ -39,7 +39,7 @@
     <header class="border-bottom bg-body-secondary eta">
         <div class="dash">
             <b>Dashboard</b>
-            <a href="#" class="sair">
+            <a href="/" class="sair">
                 <i class="material-symbols-outlined m-2"> Logout </i>
             </a>
         </div>
@@ -201,7 +201,7 @@
         <div class="row m-4">
             <% for (let i=0; i<Materia.length; i++) { %>
                 <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
-                    <a href="/materiaProf">
+                    <a href="/materiaProf/<%= Materia[i].IDMateria %>">
                         <div class="shadow card h-100 ">
                             <img src="/img/roxo.png" class="col-2 img-fluid card-img-top cor" alt="cor sala">
                             <div class="card-body">

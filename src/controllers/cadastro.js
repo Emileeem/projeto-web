@@ -71,7 +71,6 @@ module.exports = {
     async professorInsert(req, res) {
         //recebendo informações
         const dados = req.body;
-        console.log(dados)
         let foto = '../img/usuario.png';
 
         await professor.create({

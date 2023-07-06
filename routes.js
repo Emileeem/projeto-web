@@ -18,7 +18,7 @@ route.get('/addPdf', add.AddPdfGet);
 
 route.get('/materia', materia.materiaGet);
 
-route.get('/materiaProf', materia.materiaProfGet);
+route.get('/materiaProf/:IDMateria', materia.materiaProfGet);
 
 route.get('/addAluno/:IDProfessor', cadastro.alunoGet).post('/addAluno/:IDProfessor', cadastro.alunoInsert);
 

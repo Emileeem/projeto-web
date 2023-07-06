@@ -12,30 +12,34 @@ module.exports = {
     });
 
     const TurmaMateria = await turmaMateria.findAll({
-        raw: true,
-        where: {
-            IDTurma: DBedv.IDTurma
-        },
-        include: [{
-            model: materia,
-            required: false,
-            attributes: [["Nome", "NomeMateria"]]
-        }]
+      raw: true,
+      attributes: ["IDTurmaMateria", "IDTurma", "IDMateria"],
+      include: [
+        {
+          model: materia,
+          attributes: ["Nome"],
+          include: [{
+            model: professor,
+            attributes: ["Nome", "IDProfessor"]
+          }]
+        }
+      ],
+      where: { IDTurma: DBedv.IDTurma },
     });
-    console.log(TurmaMateria)
+
     res.render("../views/Home", { DBedv, TurmaMateria });
   },
 
   async HomeProfGet(req, res) {
     const DBedv = await professor.findByPk(req.params.IDProfessor, {
       raw: true,
-      attributes: ["IDProfessor", "Nome", "Senha", "Foto", "IDTurma"],
+      attributes: ["IDProfessor", "Nome", "Senha", "Foto"],
     });
     const Materia = await materia.findAll({
       raw: true,
       where: {
-        IDProfessor: DBedv.IDProfessor
-      }
+        IDProfessor: DBedv.IDProfessor,
+      },
     });
     res.render("../views/HomeProf", { Materia, DBedv });
   },

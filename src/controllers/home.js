@@ -1,39 +1,25 @@
 const turma = require("../model/turma");
 const professor = require("../model/professor");
 const aluno = require("../model/aluno");
-const turmaMateria = require("../model/turmaMateria");
 const materia = require("../model/materia");
 
 module.exports = {
   async HomeAlunoGet(req, res) {
     const DBedv = await aluno.findByPk(req.params.IDAluno, {
-      raw: true,
-      attributes: ["IDAluno", "Nome", "Senha", "Foto", "IDTurma"],
+      raw: true
     });
 
-    const TurmaMateria = await turmaMateria.findAll({
+    const Materia = await materia.findAll({
       raw: true,
-      attributes: ["IDTurmaMateria", "IDTurma", "IDMateria"],
-      include: [
-        {
-          model: materia,
-          attributes: ["Nome"],
-          include: [{
-            model: professor,
-            attributes: ["Nome", "IDProfessor"]
-          }]
-        }
-      ],
       where: { IDTurma: DBedv.IDTurma },
     });
 
-    res.render("../views/Home", { DBedv, TurmaMateria });
+    res.render("../views/Home", { DBedv, Materia });
   },
 
   async HomeProfGet(req, res) {
     const DBedv = await professor.findByPk(req.params.IDProfessor, {
-      raw: true,
-      attributes: ["IDProfessor", "Nome", "Senha", "Foto"],
+      raw: true
     });
     const Materia = await materia.findAll({
       raw: true,
@@ -41,6 +27,7 @@ module.exports = {
         IDProfessor: DBedv.IDProfessor,
       },
     });
+    console.log(Materia);
     res.render("../views/HomeProf", { Materia, DBedv });
   },
 };

@@ -28,15 +28,12 @@ module.exports = {
 
     async alunoGet(req, res) {
         const turmas = await turma.findAll({
-            raw: true, //retorna informações da tabela sem metadados.
-            attributes: ['IDTurma', 'Nome']
+            raw: true //retorna informações da tabela sem metadados.
         });
 
         const DBedv = await professor.findByPk(req.params.IDProfessor, {
-            raw: true,
-            attributes: ['IDProfessor', 'Nome', 'Senha', 'Foto']
+            raw: true
         });
-        console.log(DBedv);
         //passando o nome das salas para o front
         res.render('../views/AddAluno', { turmas, DBedv })
     },

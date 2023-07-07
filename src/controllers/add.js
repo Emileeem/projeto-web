@@ -2,7 +2,7 @@ const turma = require('../model/turma');
 const professor = require('../model/professor');
 const aluno = require('../model/aluno');
 const materia = require('../model/materia');
-const turmaMateria = require('../model/turmaMateria');
+// const turmaMateria = require('../model/turmaMateria');
 
 module.exports = {
     async AddPdfGet(req, res) {

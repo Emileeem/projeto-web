@@ -1,6 +1,6 @@
 const materia = require("../model/materia");
 const aluno = require('../model/aluno');
-const turmaMateria = require("../model/turmaMateria");
+// const turmaMateria = require("../model/turmaMateria");
 const turma = require("../model/turma");
 
 module.exports = {

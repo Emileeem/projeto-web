@@ -1,7 +1,7 @@
 // Importação
 const Sequelize = require('sequelize');
 const database = require('../config/db');
-const turmaMateria = require('./turmaMateria');
+const materia = require('./materia');
 
 // Criando tabela
 const arquivos = database.define('Arquivos', {
@@ -14,12 +14,16 @@ const arquivos = database.define('Arquivos', {
   Nome: {
     type: Sequelize.STRING(100),
     allowNull: false
+  },
+  Caminho: {
+    type: Sequelize.STRING(255),
+    allowNull: false
   }
 });
 
-arquivos.belongsTo(turmaMateria, {
+arquivos.belongsTo(materia, {
   constraint: true,
-  foreignKey: 'IDTurmaMateria'
+  foreignKey: 'IDMateria'
 });
 
 module.exports = arquivos;

@@ -1,33 +1,35 @@
 const materia = require("../model/materia");
-const aluno = require('../model/aluno');
-// const turmaMateria = require("../model/turmaMateria");
-const turma = require("../model/turma");
+const aluno = require("../model/aluno");
+const feedback = require("../model/feedback");
+const competencias = require("../model/competencia");
 
 module.exports = {
   async materiaGet(req, res) {
-    res.render("../views/Materia");
+    const Materia = await materia.findByPk(req.params.IDMateria, {
+      raw: true,
+    });
+    const Competencias = await competencias.findAll({
+      raw: true,
+      include: [
+        {
+          model: feedback,
+          where: { IDMateria: req.params.IDMateria },
+        },
+      ],
+    });
+    console.log(Competencias);
+    res.render("../views/Materia", { Materia, Competencias });
   },
-
-// todo: ligar DB com front, um card para cada materia de cada turma;
 
   async materiaProfGet(req, res) {
     const Materia = await materia.findByPk(req.params.IDMateria, {
-      raw: true
+      raw: true,
     });
-    // const Turma = await turmaMateria.findAll({
-    //   raw: true,
-    //   where: {IDMateria: req.params.IDMateria} 
-    // });
+    const Alunos = await aluno.findAll({
+      raw: true,
+      where: { IDTurma: Materia.IDTurma },
+    });
 
-    // console.log(Turma);
-
-    // const Alunos = await aluno.findAll({
-    //   raw: true,
-    //   where: {IDTurma: Turma.IDTurma}
-    // });
-
-    // console.log(Alunos);
-
-    res.render("../views/materiasProf", { Materia });
+    res.render("../views/materiasProf", { Materia, Alunos });
   },
 };

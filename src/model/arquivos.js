@@ -1,29 +1,29 @@
 // Importação
-const Sequelize = require('sequelize');
-const database = require('../config/db');
-const materia = require('./materia');
+const Sequelize = require("sequelize");
+const database = require("../config/db");
+const materia = require("./materia");
 
 // Criando tabela
-const arquivos = database.define('Arquivos', {
+const arquivos = database.define("Arquivos", {
   IDArquivos: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
-    primaryKey: true
+    primaryKey: true,
   },
   Nome: {
     type: Sequelize.STRING(100),
-    allowNull: false
+    allowNull: false,
   },
   Caminho: {
     type: Sequelize.STRING(255),
-    allowNull: false
-  }
+    allowNull: false,
+  },
 });
 
 arquivos.belongsTo(materia, {
   constraint: true,
-  foreignKey: 'IDMateria'
+  foreignKey: "IDMateria",
 });
 
 module.exports = arquivos;

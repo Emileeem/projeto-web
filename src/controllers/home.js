@@ -27,7 +27,6 @@ module.exports = {
         IDProfessor: DBedv.IDProfessor,
       },
     });
-    console.log(Materia);
     res.render("../views/HomeProf", { Materia, DBedv });
   },
 };

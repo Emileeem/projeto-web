@@ -1,4 +1,5 @@
-const calendario = require("../../src/model/calendario")
+const calendario = require("../../src/model/calendario");
+
 $(document).ready(function () {
     $('#calendar').fullCalendar({
         locale: 'pt-br',

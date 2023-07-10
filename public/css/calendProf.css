@@ -247,9 +247,6 @@ body{
     height: 500px;
 }
 
-.hidden{
-    display: none;
-}
 @media(max-width: 325px){
     #calendar{
         width: 278px !important;
@@ -320,7 +317,23 @@ body{
         left: 13.5% !important;
     }
 }
-
+@media(min-width: 700px){
+    .selecione{
+        width: 200px !important;
+        left: 25.5% !important;
+    }
+    .calendar{
+        position: relative;
+        margin: 0 !important;
+        padding: 0 !important;
+        top: 50px;
+        left: 27.5% !important;
+    }
+    h2 center{
+        position: relative;
+        left: 10%;
+    }
+}
 @media(min-width: 1024px){
     #calendar{
         width: 75% !important;

@@ -21,7 +21,7 @@ const calendario = database.define("Calendario", {
   },
   Titulo: {
     allowNull: false,
-    type: Sequelize.DATEONLY,
+    type: Sequelize.STRING(90),
   },
 });
 

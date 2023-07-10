@@ -44,7 +44,7 @@
         </header>
         <span class="edv2">
             <i class="material-symbols-outlined"> badge </i>
-            <span><b class="edv">EDV:92902064</b></span>
+            <span><b class="edv">EDV: <%= Aluno.IDAluno %></b></span>
         </span>
         <nav>
             <button>
@@ -142,11 +142,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- <% for (let i = 0; i < Competencias.length; index++) { %> -->
+                        <!-- <% for (let i = 0; i < Competencias.length; i++) { %> -->
                         <tr>
-                            <th scope="row">></th>
-                            <td><%= Competencias[i].Nome %></td>
-                            <td><%= Competencias[i].Situacao %>></td>
+                            <th scope="row">
+                                <%= Competencias.Peso %>
+                            </th>
+                            <td>
+                                <%= Competencias[i].Nome %>
+                            </td>
+                            <td>
+                                <%= Competencias[i].Situacao %>>
+                            </td>
                         </tr>
                         <!-- <%}%>                         -->
                     </tbody>
@@ -155,47 +161,26 @@
                 <p class="title-media mt-4 mb-4">Arquivos disponibilzados:</p>
                 <table class="table border align-middle table-striped-columns">
                     <tbody>
-                        <tr>
-                            <th class="file-name">Aula 1 - HTML.pdf</th>
-                            <td class="d-flex justify-content-center"><button class="dowload-button" id="btnDownload"
-                                    download href="/img/rainbow.svg"><img class="icon-dowload"
-                                        src="/img/dowload.png" alt=""></button></td>
-                        </tr>
-                        <tr>
-                            <th class="file-name">Aula 2 - HTML.pdf</th>
-                            <td class="d-flex justify-content-center"><button class="dowload-button" id="btnDownload"
-                                    download href="/img/rainbow.svg"><img class="icon-dowload"
-                                        src="/img/dowload.png" alt=""></button></td>
-                        </tr>
-                        <tr>
-                            <th class="file-name">Aula 3 - CSS.pdf</th>
-                            <td class="d-flex justify-content-center"><button class="dowload-button" id="btnDownload"
-                                    download href="/img/rainbow.svg"><img class="icon-dowload"
-                                        src="/img/dowload.png" alt=""></button></td>
-                        </tr>
-                        <tr>
-                            <th class="file-name">Aula 4 - CSS.pdf</th>
-                            <td class="d-flex justify-content-center"><button class="dowload-button" id="btnDownload"
-                                    download href="/img/azul.png"><img class="icon-dowload"
-                                        src="/img/dowload.png" alt=""></button></td>
-                        </tr>
-                        <tr>
-                            <th class="file-name">Figura Paterna.jfif</th>
-                            <td class="d-flex justify-content-center"><button class="dowload-button" id="btnDownload"
-                                    download href="/img/rainbow.svg"><img class="icon-dowload"
-                                        src="/img/dowload.png" alt=""></button></td>
-                        </tr>
+                        <% for( let i=0; i < Arquivos.length; i++ ) { %>
+                            <tr>
+                                <th class="file-name">
+                                    <%= Arquivos[i].Nome %>
+                                </th>
+                                <td class="d-flex justify-content-center"><button class="dowload-button"
+                                        id="btnDownload" download href="<%= Arquivos[i].Caminho %>"><img
+                                            class="icon-dowload" src="/img/dowload.png" alt=""></button></td>
+                            </tr>
+                            <% } %>
+                                <!-- <tr>
+                                    <th class="file-name">Figura Paterna.jfif</th>
+                                    <td class="d-flex justify-content-center"><button class="dowload-button"
+                                            id="btnDownload" download href="/img/rainbow.svg"><img class="icon-dowload"
+                                                src="/img/dowload.png" alt=""></button></td>
+                                </tr> -->
                     </tbody>
                 </table>
             </div>
         </div>
-
-        <button class="but ">
-            <span>
-                <i class="material-symbols-outlined chat"> forum </i>
-                <span class="escrita"> Chat </span>
-            </span>
-        </button>
     </main>
     <!-- -------- -->
 

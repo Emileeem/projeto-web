@@ -14,9 +14,9 @@ route.get('/home/:IDAluno', home.HomeAlunoGet);
 
 route.get('/homeprof/:IDProfessor', home.HomeProfGet);
 
-route.get('/addPdf', add.AddPdfGet);
+route.get('/addPdf/:IDMateria', add.AddPdfGet).post('/addPdf/:IDMateria', add.AddPdfPost);
 
-route.get('/materia/:IDMateria', materia.materiaGet);
+route.get('/:IDAluno/materia/:IDMateria', materia.materiaGet);
 
 route.get('/materiaProf/:IDMateria', materia.materiaProfGet);
 

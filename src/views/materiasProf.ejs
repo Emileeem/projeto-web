@@ -201,13 +201,15 @@
             </div>
         </div>
 
+        
+
         <div class="alunos mt-2">
             Alunos:
         </div>
         <!--Card com Alunos-->
 
         <div class="row m-4">
-        <% for (let i=0; i<Alunos.length; i++) { %>
+            <% for (let i=0; i<Alunos.length; i++) { %>
                 <div class="col-sm-12 col-md-4 mt-2 ">
                     <div class="shadow card h-100 ">
                         <img src="https://conteudo.imguol.com.br/c/entretenimento/d8/2017/09/27/bob-esponja-1506562776988_v2_3x4.jpg"
@@ -218,71 +220,22 @@
                             </h5>
                             <p class="text-center">Idade: Haha
                             </p>
-    
+
                         </div>
                     </div>
                 </div>
-        <% } %>
+                <% } %>
 
-        <!-- <div class="row m-4">
-            <div class="col-sm-12 col-md-4 mt-2 ">
-                <div class="shadow card h-100 ">
-                    <img src="https://conteudo.imguol.com.br/c/entretenimento/d8/2017/09/27/bob-esponja-1506562776988_v2_3x4.jpg"
-                        class="rounded-circle col-2 mx-auto img-fluid mt-5" alt="Foto aluno">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">
-                            jone
-                        </h5>
-                        <p class="text-center">Idade: Haha
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 mt-2">
-                <div class="shadow card h-100 ">
-                    <img src="https://static.wikia.nocookie.net/horadeaventurabr/images/6/6b/Happyfinn.jpg/revision/latest?cb=20100929033415&path-prefix=pt-br"
-                        class="rounded-circle col-2 mx-auto img-fluid mt-5" alt="Foto aluno">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">
-                            robso
-                        </h5>
-                        <p class="text-center">Idade: Haha
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 mt-2">
-                <div class="shadow card h-100 ">
-                    <img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2022/09/barneys-documentario-e1664478705327.jpg"
-                        class="rounded-circle col-2 mx-auto img-fluid mt-5" alt="Foto aluno">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">
-                            Gilso
-                        </h5>
-                        <p class="text-center">Idade: Haha
-                        </p>
-
-                    </div>
-                </div>
-            </div> -->
         </div>
-        <button class="btn btn-secondary admat mb-5">
-            <span>
-                <i class="material-symbols-outlined add"> Add </i>
-                <span>Adicionar PDF</span>
-            </span>
-        </button>
-        <!--chat -->
-        <button class="but ">
-            <span>
-                <i class="material-symbols-outlined chat"> forum </i>
-                <span class="escrita"> Chat </span>
-            </span>
-        </button>
+        <form action="/addPdf/<%= Materia.IDMateria %>" method="get">
+            <button class="btn btn-secondary admat mb-5">
+                <span>
+                    <i class="material-symbols-outlined add"> Add </i>
+                    <span>Adicionar PDF</span>
+                </span>
+            </button>
+        </form>
+
     </main>
     <script defer src="/js/materiasprof.js"></script>
 </body>

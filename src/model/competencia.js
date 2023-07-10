@@ -18,6 +18,9 @@ const competencias = database.define("Competencias", {
     type: Sequelize.STRING(90),
     allowNull: false,
   },
+  Peso: {
+    type: Sequelize.INTEGER,
+  },
 });
 
 competencias.belongsTo(feedback, {

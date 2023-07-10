@@ -6,7 +6,9 @@ const home = require('./src/controllers/home');
 const login = require('./src/controllers/login');
 const add = require('./src/controllers/add');
 const materia = require('./src/controllers/materia');
-const cadastro = require('./src/controllers/cadastro')
+const cadastro = require('./src/controllers/cadastro');
+const calendar = require('./src/controllers/calendario');
+
 // Iniciando as rotas
 route.get('/', login.loginGet).post('/', login.loginPost);
 
@@ -26,6 +28,11 @@ route.get('/addTurma/:IDProfessor', cadastro.turmaGet).post('/addTurma/:IDProfes
 
 route.get('/addProf/:IDProfessor', cadastro.professorGet).post('/addProf/:IDProfessor', cadastro.professorInsert);
 
-route.get('/addMateria/:IDProfessor', add.addMateriaGet).post('/addMateria/:IDProfessor', add.addMateriaPost)
+route.get('/addMateria/:IDProfessor', add.addMateriaGet).post('/addMateria/:IDProfessor', add.addMateriaPost);
+
+route.get('/calendarioProf/:IDTurma', calendar.calendarGet).post('/calendarioProf/:IDTurma', calendar.calendarInsert);
+
+route.get('/evento', calendar.eventosGet)
+
 
 module.exports = route;

@@ -73,13 +73,15 @@
                     </span>
                 </button>
             </form>
+            <form action="/calendarioProf/<%= DBedv.IDProfessor %>" method = "get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> calendar_month </i>
+                        <span>Calendário</span>
+                    </span>
+                </button>
+            </form>
 
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> calendar_month </i>
-                    <span>Calendário</span>
-                </span>
-            </button>
             <form action="/addAluno/<%= DBedv.IDProfessor %>" method="get">
                 <button>
                     <span>

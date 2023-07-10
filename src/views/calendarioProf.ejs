@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!-- Css -->
-    <link rel="stylesheet" href="calendProf.css">
+    <link rel="stylesheet" href="/css/calendProf.css">
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -189,10 +189,15 @@
         <h2>
             <center> Calendário Turma </center>
         </h2><br />
-        <select class="form-select w-25 m-4 shadow selecione" aria-label="Default select example">
-            <option selected>Selecione a turma:</option>
-            <option value="1">One</option>
+        <select class="form-select w-25 m-4 shadow selecione" aria-label="Default select example" name="turma">
+            <option disabled selected>Selecione a turma:</option>
+            <% for (let i=0; i<turmas.length; i++) { %>
+                <option value='<%= turmas[i].IDTurma %>'>
+                    <%= turmas[i].Nome %>
+                </option>
+                <% } %>
         </select>
+
         <div class="container mt-4 calendar">
             <div id="calendar" class="mt-4"></div>
         </div>
@@ -215,11 +220,11 @@
                             <input type="date" class="form-control w-100 p-2" name="DataIni" id="inicio">
                             Data Final:
                             <input type="date" class="form-control w-100 p-2" name="DataFim" id="final">
-                            
+
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
 
@@ -231,21 +236,40 @@
     <script src="js/menu.js"></script>
     <script src="js/cadastrarAluno.js"></script>
     <!--Calendário -->
-    <script src="calendarioProf.js"></script>
-    <script src = "locales/pt-br.js"></script>
+    <script src="/js/calendarioProf.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Buscar eventos do servidor
+            $.ajax({
+                url: '/evento',
+                type: 'GET',
+                success: function (response) {
+                    $('#calendar').fullCalendar({
+                        locale: 'pt-br',
+                        // Outras configurações do calendário...
+                        events: response
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Erro ao buscar eventos:', error);
+                }
+            });
+        });
+    </script>
+
     <!-- Fecha Modal -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Inicializa os componentes do Bootstrap
             var modals = document.querySelectorAll('.modal');
             var modalCloseButtons = document.querySelectorAll('[data-dismiss="modal"]');
-    
-            modals.forEach(function(modal) {
+
+            modals.forEach(function (modal) {
                 new bootstrap.Modal(modal);
             });
-    
-            modalCloseButtons.forEach(function(button) {
-                button.addEventListener('click', function() {
+
+            modalCloseButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
                     var modal = button.closest('.modal');
                     var modalInstance = bootstrap.Modal.getInstance(modal);
                     modalInstance.hide();

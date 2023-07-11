@@ -40,7 +40,6 @@ module.exports = {
       raw: true,
       where: { IDTurma: Materia.IDTurma },
     });
-
     res.render("../views/materiasProf", { Materia, Alunos });
   },
 };

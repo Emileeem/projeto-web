@@ -1,3 +1,7 @@
+// Iniciando o multer
+const multer = require("multer");
+// Arquivo do multer importado
+const config = require('./src/config/multer');
 // Iniciando Route do Express
 const express = require('express');
 const route = express.Router();
@@ -12,17 +16,17 @@ const calendar = require('./src/controllers/calendario');
 // Iniciando as rotas
 route.get('/', login.loginGet).post('/', login.loginPost);
 
-route.get('/home/:IDAluno', home.HomeAlunoGet);
+route.get('/home', home.HomeAlunoGet);
 
-route.get('/homeprof/:IDProfessor', home.HomeProfGet);
+route.get('/homeprof', home.HomeProfGet);
 
 route.get('/addPdf/:IDMateria', add.AddPdfGet).post('/addPdf/:IDMateria', add.AddPdfPost);
 
 route.get('/:IDAluno/materia/:IDMateria', materia.materiaGet);
 
-route.get('/materiaProf/:IDMateria', materia.materiaProfGet);
+route.get('/:IDProfessor/materiaProf/:IDMateria', materia.materiaProfGet);
 
-route.get('/addAluno/:IDProfessor', cadastro.alunoGet).post('/addAluno/:IDProfessor', cadastro.alunoInsert);
+route.get('/addAluno/:IDProfessor', cadastro.alunoGet).post('/addAluno/:IDProfessor', multer(config).single('foto'), cadastro.alunoInsert);
 
 route.get('/addTurma/:IDProfessor', cadastro.turmaGet).post('/addTurma/:IDProfessor', cadastro.turmaInsert);
 

@@ -187,7 +187,7 @@
                 Cadastro novo Aluno
             </h2>
             
-            <form class="row g-7" action ="/addAluno/<%= DBedv.IDProfessor %>" method="post">
+            <form class="row g-7" action ="/addAluno/<%= DBedv.IDProfessor %>" method="post" enctype="multipart/form-data">
                 <div for="formFile" class="col-12 col-sm-6 col-md-4 w-100 mb-3 form-label foto">
                     <img src = "/img/usuario.png" class = "fotousu" id = "imgFoto">
                     <input class="form-control eta" type="file" id="flImage" name="foto" accept="image/*">
@@ -223,7 +223,7 @@
                     <input class="btn btn-primary w-100" type="submit" value="Cadastrar">
                 </div>
             </form>
-
+                
                 <a href="#" class="volta">
                     <span>
                         <i class="material-symbols-outlined voltar1">undo</i>

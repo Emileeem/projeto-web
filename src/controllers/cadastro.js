@@ -43,7 +43,12 @@ module.exports = {
         const dados = req.body;
 
         //nome padrão da foto do aluno
-        let foto = '../img/usuario.png';
+        let foto = 'usuario.png';
+
+        if (req.file) {
+            // Pegar novo nome da foto
+            foto = req.file.filename;
+        }
 
         await aluno.create({
             IDAluno: dados.EDV,

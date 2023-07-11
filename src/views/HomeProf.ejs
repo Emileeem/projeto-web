@@ -34,8 +34,10 @@
 </head>
 
 <body>
+
     <!-- Cabeçalho -->
     <div class="linha"> .</div>
+
     <header class="border-bottom bg-body-secondary eta">
         <div class="dash">
             <b>Dashboard</b>
@@ -58,14 +60,14 @@
 
     <aside class="sidebar shadow">
         <header class="sidebarheader">
-            <img class="logo-img" src="https://sujeitoprogramador.com/steve.png" alt="foto do usuario">
+            <img class="logo-img" src="/img/<%= session.Foto %>" alt="foto do usuario">
         </header>
         <span class="edv2">
             <i class="material-symbols-outlined"> badge </i>
-            <span><b class="edv">EDV:<%= DBedv.IDProfessor %></b></span>
+            <span><b class="edv">EDV:<%= session.edv %></b></span>
         </span>
         <nav>
-            <form action="/homeprof/<%= DBedv.IDProfessor %>" method="get">
+            <form action="/homeprof" method="get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> home </i>
@@ -73,7 +75,7 @@
                     </span>
                 </button>
             </form>
-            <form action="/calendarioProf/<%= DBedv.IDProfessor %>" method = "get">
+            <form action="/calendarioProf/<%= session.edv %>" method = "get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> calendar_month </i>
@@ -82,7 +84,7 @@
                 </button>
             </form>
 
-            <form action="/addAluno/<%= DBedv.IDProfessor %>" method="get">
+            <form action="/addAluno/<%= session.edv %>" method="get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> school </i>
@@ -90,7 +92,7 @@
                     </span>
                 </button>
             </form>
-            <form action="/addProf/<%= DBedv.IDProfessor %>" method="get">
+            <form action="/addProf/<%= session.edv %>" method="get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> person_add </i>
@@ -99,7 +101,7 @@
                 </button>
             </form>
 
-            <form action="/addTurma/<%= DBedv.IDProfessor %>" method="get">
+            <form action="/addTurma/<%= session.edv %>" method="get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> group_add </i>
@@ -131,7 +133,7 @@
             </span>
         </button>
 
-        <form action="/homeprof/<%= DBedv.IDProfessor %>" method="get">
+        <form action="/homeprof/<%= session.edv %>" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> home </i>
@@ -147,7 +149,7 @@
             </span>
         </button>
 
-        <form action="/addAluno/<%= DBedv.IDProfessor %>" method="get">
+        <form action="/addAluno/<%= session.edv %>" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> school </i>
@@ -156,7 +158,7 @@
             </button>
         </form>
 
-        <form action="/addProf/<%= DBedv.IDProfessor %>" method="get">
+        <form action="/addProf/<%= session.edv %>" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> person_add </i>
@@ -164,7 +166,7 @@
                 </span>
             </button>
         </form>
-        <form action="/addTurma/<%= DBedv.IDProfessor %>" method="get">
+        <form action="/addTurma/<%= session.edv %>" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> group_add </i>
@@ -183,14 +185,14 @@
     <!-- Main -->
     <main class="main">
         <div class="mt-4">
-            <h1 class="nome"> Bem vindo(a) <%= DBedv.Nome %>!
+            <h1 class="nome"> Bem vindo(a) <%= session.nome %>!
             </h1>
         </div>
         <div class="mt-4">
             <h2 class="materias"> Suas Matérias:</h2>
         </div>
         <div class="position-absolute end-0 m-2">
-            <form action="/addMateria/<%= DBedv.IDProfessor %>" method="get">
+            <form action="/addMateria/<%= session.edv %>" method="get">
                 <button type="submit" class="btn btn-secondary admat">
                     <span>
                         <i class="material-symbols-outlined add"> Add </i>

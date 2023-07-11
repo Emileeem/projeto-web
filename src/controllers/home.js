@@ -5,28 +5,28 @@ const materia = require("../model/materia");
 
 module.exports = {
   async HomeAlunoGet(req, res) {
-    const DBedv = await aluno.findByPk(req.params.IDAluno, {
-      raw: true
-    });
-
+    session = req.session;
     const Materia = await materia.findAll({
       raw: true,
-      where: { IDTurma: DBedv.IDTurma },
+      where: { IDTurma: session.turma },
     });
-
-    res.render("../views/Home", { DBedv, Materia });
+    res.render("../views/Home", { session, Materia });
   },
 
   async HomeProfGet(req, res) {
-    const DBedv = await professor.findByPk(req.params.IDProfessor, {
-      raw: true
-    });
+    session = req.session;
+
+    if (!session.edv) {
+      res.redirect("/");
+      return;
+    }
+
     const Materia = await materia.findAll({
       raw: true,
       where: {
-        IDProfessor: DBedv.IDProfessor,
+        IDProfessor: req.session.edv,
       },
     });
-    res.render("../views/HomeProf", { Materia, DBedv });
+    res.render("../views/HomeProf", { Materia, session });
   },
 };

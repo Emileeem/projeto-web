@@ -3,6 +3,7 @@ const professor = require("../model/professor");
 const aluno = require("../model/aluno");
 const materia = require("../model/materia");
 const arquivos = require("../model/arquivos");
+const competencias= require("../model/competencia")
 
 // const turmaMateria = require('../model/turmaMateria');
 
@@ -40,11 +41,31 @@ module.exports = {
 
   async addMateriaPost(req, res) {
     const dados = req.body;
-    await materia.create({
-      Nome: dados.Nome,
-      IDProfessor: req.params.IDProfessor,
-      IDTurma: dados.Turma,
-    });
+    // const Materia = await materia.create({
+    //   Nome: dados.NomeMateria,
+    //   IDProfessor: req.params.IDProfessor,
+    //   IDTurma: dados.Turma,
+    // });
+
+    // // const Alunos = await aluno.findAll({
+    // //   raw: true,
+    // //   where: {IDTurma: dados.Turma}
+    // // });
+
+    // // for(i= 0; i<Alunos.IDAluno.length; i++){
+    // //   const Feedback = await Feedback.create({
+    // //     IDMateria: Materia.IDMateria,
+    // //     IDAluno: Alunos[i].IDAluno,
+    // //   });
+    // //   for(i=0; i<dados.Nome.length; i++){
+    // //     await competencias.create({
+    // //       Nome: dados.Nome[i],
+    // //       Peso: dados.Peso[i],
+    // //       IDFeedback: Feedback.IDFeedback
+    // //     })
+    // //   }
+    // // }
+
     res.redirect(`/homeprof/${req.params.IDProfessor}`);
   },
 };

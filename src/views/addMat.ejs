@@ -54,7 +54,7 @@
     </nav>
     <!-- -------- -->
 
-   
+
     <!-- Menu com click -->
 
     <aside class="sidebar shadow">
@@ -182,43 +182,74 @@
 
     <main class="main">
         <!-- Cadastro Matéria -->
-        <div
-            class="form-signin mt-5 formulario border-transparent shadow position-absolute top-50 start-50 translate-middle p-2  mb-4">
+        <div class="form-signin mt-5 formulario border-transparent shadow p-2  mb-4" >
 
-            
-            <h2 class = "text-center mt-4 mb-4">
+
+            <h2 class="text-center mt-4 mb-4">
                 Criando nova Matéria
             </h2>
-            
+
             <form class="row g-7" action="/addMateria/<%= DBedv.IDProfessor %>" method="post">
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-4">
                     <label class="form-label">Nome</label>
-                    <input type="text" class="form-control" placeholder="Título" name="Nome" required>
+                    <input type="text" class="form-control" placeholder="Título" name="NomeTurma" required>
                 </div>
-                
+
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-3">
                     <label class="form-label">Turma:</label>
                     <select name="Turma" id="" class="form-control" required>
                         <option disabled selected> Selecione </option>
                         <% for (let i=0; i<turmas.length; i++) { %>
-                            <option value='<%=turmas[i].IDTurma%>'> <%= turmas[i].Nome %> </option>
-                        <% } %>
+                            <option value='<%=turmas[i].IDTurma%>'>
+                                <%= turmas[i].Nome %>
+                            </option>
+                            <% } %>
                     </select>
                 </div>
+                <!-- Cadastro Competências -->
+                <div class="competencias mt-5  p-4 mb-3 row g-7">
+                    
+                    <h2 class="text-center mt-4 mb-4 ">
+                        Competências da Matéria
+                    </h2>
+                    
+                    <div class="col-12 col-sm-6 col-md-4 w-50 mb-4">
+                        <label class="form-label">Nome:</label>
+                        <input type="text" class="form-control" placeholder="Nome" name="Nome" required>
+                    </div>
+                    
+                    <div class="col-12 col-sm-6 col-md-4 w-50 mb-4">
+                        <label class="form-label">Peso:</label>
+                        <input type="number" class="form-control" placeholder="Peso" name="Peso" required>
+                    </div>
+                    
+                    <div id="input" class="row g-7"></div>
 
-                <div class="col-12 w-100 col-md-4 butao mb-4">
-                    <input class="btn btn-primary w-100" type="submit" value="Enviar">
-                </div>
-            </form>
+                    <button class="add mb-3" id="adicionar">
+                        <span>
+                            <abbr title="Adicionar Competência circle"> <i class="material-symbols-outlined ">
+                                add_circle </i>
+                            </abbr>
+                        </span>
+                    </button>
+                    <div class="col-12 col-md-4 butao w-100 mb-4">
+                        <input class="btn btn-primary w-100" type="submit" value="Enviar">
+                    </div>
+        
+                    <a href="#" class="volta">
+                        <span>
+                            <i class="material-symbols-outlined voltar1">undo</i>
+                            <span class="voltar">Voltar</span>
+                        </span>
+                    </a>
+                </form>
+            </div>
+        </div>
 
-                <a href="#" class = "volta">
-                    <span>
-                        <i class="material-symbols-outlined voltar1">undo</i>
-                        <span class="voltar">Voltar</span>
-                    </span>
-                </a>
+
     </main>
-    <script src="../JavaScript/menu.js"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/js/comp.js"></script>
 </body>
 
 </html>

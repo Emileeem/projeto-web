@@ -1,10 +1,11 @@
 /** Cabecalho **/
-.linha{
+.linha {
     background-image: url(../img/rainbow.svg);
     background-repeat: no-repeat;
     height: 10px;
     background-size: cover;
 }
+
 .cabeca {
     font-family: 'Oswald', sans-serif;
     font-size: 30px;
@@ -15,39 +16,45 @@
     display: flex;
     justify-content: center;
 }
-.eta{
+
+.eta {
     height: 1%;
     font-size: 20px;
 }
-.dash{
+
+.dash {
     text-align: right;
     padding: 2px;
 }
-.sair{
+
+.sair {
     text-decoration: none;
     color: black;
 }
+
 /** Menu **/
 
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     margin: 0;
     font-family: sans-serif;
     background-color: #FFF;
 }
 
-.button-sidebar{
+.button-sidebar {
     background: inherit;
     color: inherit;
     transition: all 0.45s;
 }
-.button-sidebar:hover{
+
+.button-sidebar:hover {
     transform: scale(1.2);
 }
 
-.sidebar{
+.sidebar {
     position: fixed;
     top: 17%;
     display: flex;
@@ -58,11 +65,13 @@ body{
     padding: 40px 10px 30px 10px;
     transition: all 0.45s;
 }
-.sidebarheader{
+
+.sidebarheader {
     width: 100%;
     margin-bottom: 16px;
 }
-.logo-img{
+
+.logo-img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -70,7 +79,8 @@ body{
     transition: transform 0.4s;
     margin-left: 10px;
 }
-.logo-img:hover{
+
+.logo-img:hover {
     transform: scale(1.1);
 }
 
@@ -85,7 +95,7 @@ body{
     padding: 0;
 }
 
-.sidebar button > span {
+.sidebar button>span {
     display: inline-flex;
     align-items: center;
     gap: 12px;
@@ -96,7 +106,7 @@ body{
     transition: all 0.4s;
 }
 
-.sidebar button:hover > span{
+.sidebar button:hover>span {
     background-color: rgba(0, 0, 0, 0.08);
 }
 
@@ -118,72 +128,82 @@ body{
     text-align: center;
     font-weight: 100;
 }
-.edv2{
+
+.edv2 {
     margin-left: 14px;
 }
+
 .sidebar nav {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+
 .main {
     margin-left: 250px;
     margin-right: 6px;
     overflow: hidden;
     transition: margin 0.45s;
 }
+
 /** Tamanhos **/
-@media (width < 920px){
-    .logo-img{
+@media (width < 920px) {
+    .logo-img {
         width: 35px;
         height: 35px;
     }
-    .sidebar{
+
+    .sidebar {
         width: 72px;
     }
-    
-    .sidebar button > span{
+
+    .sidebar button>span {
         width: 50px;
     }
 
-    .sidebar button > span > span{
+    .sidebar button>span>span {
         opacity: 0;
         visibility: hidden;
     }
-    .edv{
+
+    .edv {
         opacity: 0;
         visibility: hidden;
     }
-    .main{
+
+    .main {
         margin-left: 78px;
     }
 }
 
-.button-mobile{
+.button-mobile {
     display: none;
     align-self: flex-start;
     align-items: center;
     margin: 16px;
-    background: transparent; 
+    background: transparent;
     color: #000;
     border: 0;
 }
-.button-mobile span{
+
+.button-mobile span {
     font-size: 24px;
     margin-left: 8px;
     color: #000;
     font-size: 20px;
     font-family: sans-serif;
 }
+
 .close span i {
     font-size: 42px;
 }
-.menu-mobile{
+
+.menu-mobile {
     display: none;
 }
 
-.menu-mobile-active{
+.menu-mobile-active {
     width: 100vw;
     height: 100vh;
     background-color: #000;
@@ -198,31 +218,36 @@ body{
     overflow: hidden;
 }
 
-.menu-mobile-active button{
+.menu-mobile-active button {
     background: transparent;
     border: 0;
     color: #fff;
     margin-bottom: 16px;
 }
-.menu-mobile-active button > span{
+
+.menu-mobile-active button>span {
     display: inline-flex;
     align-items: center;
 }
-.mobile-text{
+
+.mobile-text {
     font-size: 22px;
     margin-left: 8px;
 }
 
-@media(max-width: 480px){
-    .sidebar{
+@media(max-width: 480px) {
+    .sidebar {
         display: none;
     }
-    .button-mobile{
+
+    .button-mobile {
         display: flex;
     }
-    .main{
+
+    .main {
         margin-left: 6px;
     }
+
     .etslogo {
         width: 300px;
         display: flex;
@@ -231,99 +256,154 @@ body{
 }
 
 /**forms **/
-.titulo{
+
+
+.titulo {
     height: 10px !important;
     padding: 0px !important;
     background-color: red;
 }
-.formulario{
+
+.formulario {
+    position: absolute;
     width: 35%;
     border-radius: 20px;
+    top: 30%;
+    left: 25%;
 }
-.logo {
-    font-family: 'Open Sans', sans-serif;
-}
-.image {
-    width: 100%;
-    left: 21%;
-    top: 1%;
-    display: flex;
-    float: right;
-}
+
+
 @media (max-width: 768px) {
 
-    .formulario{
+    .formulario { 
+        position: absolute;
+        left: 27%;
         width: 55%;
         border-radius: 20px;
     }
+
     .logo {
         font-family: 'Open Sans', sans-serif;
     }
+
     .image {
         width: 90%;
         position: relative;
         left: -5%;
     }
+
+
+    .add {
+        position: relative;
+        right: -85% !important;
+    }
 }
+
 @media (max-width: 568px) {
 
-
-    .formulario{
+    .formulario {
         width: 65%;
         border-radius: 20px;
     }
+
     .logo {
         font-family: 'Open Sans', sans-serif;
     }
 
-    
+
+
+    .add {
+        position: relative;
+        right: -70% !important;
+    }
 }
+
 @media (max-width: 340px) {
 
-    .formulario{
+    .formulario {
+        position: absolute;
+        left: 17%;
         width: 65%;
         border-radius: 20px;
     }
+
     .logo {
         font-family: 'Open Sans', sans-serif;
     }
 
-    
-}
-@media (min-width: 1000px){
-    .formulario{
-        width: 50%;
-        border-radius: 20px;
-    }
-    .logo {
-        font-family: 'Open Sans', sans-serif;
-    }
-    .image {
-        width: 60%;
+
+    .add {
         position: relative;
-        left: -13%;
+        right: -70% !important;
+    }
+
+
+}
+
+@media (min-width: 1000px) {
+    .formulario {
+        width: 30%;
+        border-radius: 20px;
+        position: absolute;
+        left: 40%;
+    }
+
+    .add {
+        position: relative;
+        right: -83% !important;
     }
 }
 
 @media (min-width: 1600px) {
-    .formulario{
+    .formulario {
         width: 20%;
         border-radius: 20px;
     }
+
     .logo {
         font-family: 'Open Sans', sans-serif;
     }
 
 }
 
-.volta{
+.volta {
     text-decoration: none;
     color: #000;
 }
 
-.voltar{
+.voltar {
     font-size: 20px;
 }
-.voltar1{
+
+.voltar1 {
     font-size: 22px;
 }
+
+/** competencias **/
+
+.add {
+    font-size: 30px;
+    position: relative;
+    right: -90%;
+    border: transparent;
+    background: white;
+    transition: all 0.45s;
+    width: 60px;
+}
+
+abbr {
+    transition: 0.1s;
+}
+
+.circle {
+    background: white;
+    color: black;
+    transition: all 0.45s;
+}
+
+.add:hover {
+    transform: scale(1.1);
+    background: lightgray;
+    border-radius: 5px;
+}
+

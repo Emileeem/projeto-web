@@ -43,7 +43,7 @@
 
   <!-- Log-in -->
   <div
-    class="form-signin mt-5 formulario border-transparent shadow position-absolute top-50 start-50 translate-middle p-2  mb-4">
+    class="form-signin mt-5 formulario border-transparent shadow position-absolute top-50 start-50 translate-middle p-2  mb-4 d-flex justify-content-center">
 
     <!-- <form action="/home" method="get" class="row g-7"> -->
     <form action="/" method="post" class="row g-7">
@@ -70,17 +70,23 @@
         <label for="floatingPassword" class="form-label">Senha</label>
       </div>
 
+      <% if (erro == true) { %>
+        <div class="alert alert-danger" role="alert">
+          EDV ou senha Incorretos
+        </div>
+      <% } %>
+      
       <div class="col-12 w-100 col-md-4 butao mb-4">
         <input class="btn btn-primary w-100" type="submit" value="Entrar">
       </div>
-
+      
     </form>
-
+    
   </div>
   <footer class = "linha2">
     .
   </footer>
-
+  
 </body>
 
 </html>

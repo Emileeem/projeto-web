@@ -31,6 +31,14 @@
     display: flex;
     float: right;
 }
+
+.row {
+    justify-content: center;
+}
+
+.alert-danger {
+    width: 96.741%;
+}
 @media (max-width: 768px) {
 
     .etslogo {
@@ -50,6 +58,9 @@
         position: relative;
         left: -5%;
     }
+    .alert-danger {
+        width: 93.741%;
+    }
 }
 @media (max-width: 568px) {
     .etslogo {
@@ -65,7 +76,9 @@
     .logo {
         font-family: 'Open Sans', sans-serif;
     }
-
+    .alert-danger {
+        width: 90.741%;
+    }
     
 }
 @media (max-width: 340px) {
@@ -77,7 +90,9 @@
     .logo {
         font-family: 'Open Sans', sans-serif;
     }
-
+    .alert-danger {
+        width: 87.741%;
+    }
     
 }
 @media (min-width: 1000px){
@@ -98,6 +113,9 @@
         position: relative;
         left: -13%;
     }
+    .alert-danger {
+        width: 96.741%;
+    }
 }
 
 @media (min-width: 1600px) {
@@ -113,7 +131,9 @@
     .logo {
         font-family: 'Open Sans', sans-serif;
     }
-
+    .alert-danger {
+        width: 93.741%;
+    }
 }
 
 /** Footer **/

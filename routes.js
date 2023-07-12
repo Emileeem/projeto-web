@@ -16,6 +16,8 @@ const calendar = require('./src/controllers/calendario');
 // Iniciando as rotas
 route.get('/', login.loginGet).post('/', login.loginPost);
 
+route.get('/logout', login.logout);
+
 route.get('/home', home.HomeAlunoGet);
 
 route.get('/homeprof', home.HomeProfGet);
@@ -24,19 +26,18 @@ route.get('/addPdf/:IDMateria', add.AddPdfGet).post('/addPdf/:IDMateria', add.Ad
 
 route.get('/:IDAluno/materia/:IDMateria', materia.materiaGet);
 
-route.get('/:IDProfessor/materiaProf/:IDMateria', materia.materiaProfGet);
+route.get('/materiaProf/:IDMateria', materia.materiaProfGet);
 
-route.get('/addAluno/:IDProfessor', cadastro.alunoGet).post('/addAluno/:IDProfessor', multer(config).single('foto'), cadastro.alunoInsert);
+route.get('/addAluno', cadastro.alunoGet).post('/addAluno', multer(config).single('foto'), cadastro.alunoInsert);
 
-route.get('/addTurma/:IDProfessor', cadastro.turmaGet).post('/addTurma/:IDProfessor', cadastro.turmaInsert);
+route.get('/addTurma', cadastro.turmaGet).post('/addTurma', cadastro.turmaInsert);
 
-route.get('/addProf/:IDProfessor', cadastro.professorGet).post('/addProf/:IDProfessor', cadastro.professorInsert);
+route.get('/addProf', cadastro.professorGet).post('/addProf', multer(config).single('foto'), cadastro.professorInsert);
 
-route.get('/addMateria/:IDProfessor', add.addMateriaGet).post('/addMateria/:IDProfessor', add.addMateriaPost);
+route.get('/addMateria', add.addMateriaGet).post('/addMateria', add.addMateriaPost);
 
 route.get('/calendarioProf/:IDTurma', calendar.calendarGet).post('/calendarioProf/:IDTurma', calendar.calendarInsert);
 
-route.get('/evento', calendar.eventosGet)
-
+route.get('/evento', calendar.eventosGet);
 
 module.exports = route;

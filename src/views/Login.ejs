@@ -55,38 +55,40 @@
         <label for="cargo" class="form-label">Cargo:</label>
         <select name="cargo" id="cargo" class="form-control" required>
           <option value="" disabled selected> Selecione </option>
-          <option value="Aluno" > Aluno </option>
-          <option value="Professor" > Professor </option>
+          <option value="Aluno"> Aluno </option>
+          <option value="Professor"> Professor </option>
         </select>
       </div>
 
       <div class="form-floating col-12 col-sm-6 col-md-4 w-100 mb-4">
-        <input type="text" name="edv" class="form-control border-secondary" id="floatingInput" placeholder="EDV" required>
-        <label for="floatingInput" class="form-label" >EDV</label>
+        <input type="text" name="edv" class="form-control border-secondary" id="floatingInput" placeholder="EDV"
+          required>
+        <label for="floatingInput" class="form-label">EDV</label>
       </div>
 
       <div class="form-floating col-12 col-sm-6 col-md-4 w-100 mb-4">
-        <input type="password" name="senha" class="form-control border-secondary" id="floatingPassword" placeholder="Senha" required>
+        <input type="password" name="senha" class="form-control border-secondary" id="floatingPassword"
+          placeholder="Senha" required>
         <label for="floatingPassword" class="form-label">Senha</label>
       </div>
 
-      <% if (erro == true) { %>
+      <% if (erro==true) { %>
         <div class="alert alert-danger" role="alert">
           EDV ou senha Incorretos
         </div>
-      <% } %>
-      
-      <div class="col-12 w-100 col-md-4 butao mb-4">
-        <input class="btn btn-primary w-100" type="submit" value="Entrar">
-      </div>
-      
+        <% } %>
+
+          <div class="col-12 w-100 col-md-4 butao mb-4">
+            <input class="btn btn-primary w-100" type="submit" value="Entrar">
+          </div>
+
     </form>
-    
+
   </div>
-  <footer class = "linha2">
+  <footer class="linha2">
     .
   </footer>
-  
+
 </body>
 
 </html>

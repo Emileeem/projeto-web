@@ -6,6 +6,12 @@ const materia = require("../model/materia");
 module.exports = {
   async HomeAlunoGet(req, res) {
     session = req.session;
+
+    if (!session.edv) {
+      res.redirect("/");
+      return;
+    }
+
     const Materia = await materia.findAll({
       raw: true,
       where: { IDTurma: session.turma },

@@ -60,7 +60,7 @@
 
     <aside class="sidebar shadow">
         <header class="sidebarheader">
-            <img class="logo-img" src="/img/<%= session.Foto %>" alt="foto do usuario">
+            <img class="logo-img" src="/img/<%= session.foto %>" alt="foto do usuario">
         </header>
         <span class="edv2">
             <i class="material-symbols-outlined"> badge </i>
@@ -75,7 +75,7 @@
                     </span>
                 </button>
             </form>
-            <form action="/calendarioProf/<%= session.edv %>" method = "get">
+            <form action="/calendarioProf/<%= session.edv %>" method="get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> calendar_month </i>
@@ -84,7 +84,7 @@
                 </button>
             </form>
 
-            <form action="/addAluno/<%= session.edv %>" method="get">
+            <form action="/addAluno" method="get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> school </i>
@@ -92,7 +92,7 @@
                     </span>
                 </button>
             </form>
-            <form action="/addProf/<%= session.edv %>" method="get">
+            <form action="/addProf" method="get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> person_add </i>
@@ -101,7 +101,7 @@
                 </button>
             </form>
 
-            <form action="/addTurma/<%= session.edv %>" method="get">
+            <form action="/addTurma" method="get">
                 <button>
                     <span>
                         <i class="material-symbols-outlined"> group_add </i>
@@ -110,13 +110,14 @@
                 </button>
             </form>
 
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> Logout </i>
-                    <span>Sair</span>
-                </span>
-            </button>
-
+            <form action="/logout" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> Logout </i>
+                        <span>Sair</span>
+                    </span>
+                </button>
+            </form>
         </nav>
 
     </aside>
@@ -133,7 +134,7 @@
             </span>
         </button>
 
-        <form action="/homeprof/<%= session.edv %>" method="get">
+        <form action="/homeprof" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> home </i>
@@ -149,7 +150,7 @@
             </span>
         </button>
 
-        <form action="/addAluno/<%= session.edv %>" method="get">
+        <form action="/addAluno" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> school </i>
@@ -158,7 +159,7 @@
             </button>
         </form>
 
-        <form action="/addProf/<%= session.edv %>" method="get">
+        <form action="/addProf" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> person_add </i>
@@ -166,7 +167,7 @@
                 </span>
             </button>
         </form>
-        <form action="/addTurma/<%= session.edv %>" method="get">
+        <form action="/addTurma" method="get">
             <button>
                 <span>
                     <i class="material-symbols-outlined"> group_add </i>
@@ -192,7 +193,7 @@
             <h2 class="materias"> Suas Matérias:</h2>
         </div>
         <div class="position-absolute end-0 m-2">
-            <form action="/addMateria/<%= session.edv %>" method="get">
+            <form action="/addMateria" method="get">
                 <button type="submit" class="btn btn-secondary admat">
                     <span>
                         <i class="material-symbols-outlined add"> Add </i>

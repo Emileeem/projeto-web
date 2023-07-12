@@ -50,33 +50,35 @@
 
     <aside class="sidebar shadow">
         <header class="sidebarheader">
-            <img class="logo-img" src="https://sujeitoprogramador.com/steve.png" alt="foto do usuario">
+            <img class="logo-img" src="/img/<%= session.foto %>" alt="foto do usuario">
         </header>
         <span class="edv2">
             <i class="material-symbols-outlined"> badge </i>
-            <span><b class="edv">EDV: <%= DBedv.IDAluno %> </b></span>
+            <span><b class="edv">EDV: <%= session.edv %> </b></span>
         </span>
         <nav>
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> home </i>
-                    <span>Início</span>
-                </span>
-            </button>
-
+            <form action="/home" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> home </i>
+                        <span>Início</span>
+                    </span>
+                </button>
+            </form>
             <button>
                 <span>
                     <i class="material-symbols-outlined"> calendar_month </i>
                     <span>Calendário</span>
                 </span>
             </button>
-
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> Logout </i>
-                    <span>Sair</span>
-                </span>
-            </button>
+            <form action="/logout" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> Logout </i>
+                        <span>Sair</span>
+                    </span>
+                </button>
+            </form>
         </nav>
 
     </aside>
@@ -117,7 +119,7 @@
 
     <main class="main">
         <div class="mt-4">
-            <h1 class="nome"> Bem vindo(a) <%= DBedv.Nome %>! </h1>
+            <h1 class="nome"> Bem vindo(a) <%= session.nome %>! </h1>
         </div>
         <div class="mt-4">
             <h2 class="materias"> Suas Matérias:</h2>
@@ -127,7 +129,7 @@
         <div class="row m-4">
             <% for (let i=0; i< Materia.length; i++) {%>
                 <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
-                    <a href="/<%=DBedv.IDAluno%>/materia/<%= Materia[i].IDMateria %>">
+                    <a href="/<%= session.edv %>/materia/<%= Materia[i].IDMateria %>">
                         <div class="shadow card h-100 ">
                             <img src="/img/roxo.png" class="col-2 img-fluid card-img-top cor" alt="cor sala">
                             <div class="card-body">

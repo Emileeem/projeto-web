@@ -54,16 +54,16 @@
     </nav>
     <!-- -------- -->
 
-   
+
     <!-- Menu com click -->
 
     <aside class="sidebar shadow">
         <header class="sidebarheader">
-            <img class="logo-img" src="https://sujeitoprogramador.com/steve.png" alt="foto do usuario">
+            <img class="logo-img" src="/img/<%= session.foto %>" alt="foto do usuario">
         </header>
         <span class="edv2">
             <i class="material-symbols-outlined"> badge </i>
-            <span><b class="edv">EDV:92902064</b></span>
+            <span><b class="edv">EDV:<%= session.edv %></b></span>
         </span>
         <nav>
             <form action="/homeprof" method="get">
@@ -74,14 +74,15 @@
                     </span>
                 </button>
             </form>
+            <form action="/calendarioProf/<%= session.edv %>" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> calendar_month </i>
+                        <span>Calendário</span>
+                    </span>
+                </button>
+            </form>
 
-
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> calendar_month </i>
-                    <span>Calendário</span>
-                </span>
-            </button>
             <form action="/addAluno" method="get">
                 <button>
                     <span>
@@ -108,13 +109,14 @@
                 </button>
             </form>
 
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> Logout </i>
-                    <span>Sair</span>
-                </span>
-            </button>
-
+            <form action="/logout" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> Logout </i>
+                        <span>Sair</span>
+                    </span>
+                </button>
+            </form>
         </nav>
 
     </aside>
@@ -180,52 +182,53 @@
         </button>
     </nav>
 
+
     <main class="main">
 
         <!-- Cadastro Aluno/Professor -->
         <div class="form-signin formulario shadow position-absolute top-50 start-50 translate-middle p-2 mb-4 mt-4">
 
-            <form class="row g-7" action="/addProf/<%= DBedv.IDProfessor %>" method = "post">
+            <h2 class="text-center mt-4 mb-4">
+                Cadastro novo Instrutor
+            </h2>
 
-                <h2 class="text-center mt-4 mb-4">
-                    Cadastro novo Instrutor
-                </h2>
-                
+            <form class="row g-7" action="/addProf" method="post" enctype="multipart/form-data">
+
                 <div for="formFile" class="col-12 col-sm-6 col-md-4 w-100 mb-3 form-label foto">
-                    <img src = "/img/usuario.png" class = "fotousu" id = "imgFoto">
+                    <img src="/img/usuario.png" class="fotousu" id="imgFoto">
                     <input class="form-control eta" type="file" id="flImage" name="foto" accept="image/*">
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-4">
                     <label class="form-label">Nome Completo:</label>
-                    <input type="text" class="form-control" placeholder="Nome" name = "Nome" required>
+                    <input type="text" class="form-control" placeholder="Nome" name="Nome" required>
                 </div>
-                
+
                 <div class="col-12 col-sm-6 col-md-4 w-50 mb-4">
                     <label class="form-label">EDV:</label>
-                    <input type="text" class="form-control" placeholder="EDV"  name = "EDV" required>
+                    <input type="text" class="form-control" placeholder="EDV" name="EDV" required>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 w-50 mb-4">
                     <label class="form-label">Senha:</label>
-                    <input type="password" class="form-control" placeholder="Nome" name = "Senha" required>
+                    <input type="password" class="form-control" placeholder="Nome" name="Senha" required>
                 </div>
 
                 <div class="col-12 w-100 col-md-4 butao mb-4">
                     <input class="btn btn-primary w-100" type="submit" value="Cadastrar">
                 </div>
-                
+
             </form>
 
-                <a href="#" class="volta">
-                    <span>
-                        <i class="material-symbols-outlined voltar1">undo</i>
-                        <span class="voltar">Voltar</span>
-                    </span>
-                </a>
+            <a href="#" class="volta">
+                <span>
+                    <i class="material-symbols-outlined voltar1">undo</i>
+                    <span class="voltar">Voltar</span>
+                </span>
+            </a>
     </main>
     <script src="/js/menu.js"></script>
-    <script src = "/js/cadastrarAluno.js"></script>
+    <script src="/js/cadastrarAluno.js"></script>
 
 
 </body>

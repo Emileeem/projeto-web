@@ -58,11 +58,11 @@
 
     <aside class="sidebar shadow">
         <header class="sidebarheader">
-            <img class="logo-img" src="https://sujeitoprogramador.com/steve.png" alt="foto do usuario">
+            <img class="logo-img" src="/img/<%= session.foto %>" alt="foto do usuario">
         </header>
         <span class="edv2">
             <i class="material-symbols-outlined"> badge </i>
-            <span><b class="edv">EDV:92902064</b></span>
+            <span><b class="edv">EDV:<%= session.edv %></b></span>
         </span>
         <nav>
             <form action="/homeprof" method="get">
@@ -73,14 +73,15 @@
                     </span>
                 </button>
             </form>
+            <form action="/calendarioProf/<%= session.edv %>" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> calendar_month </i>
+                        <span>Calendário</span>
+                    </span>
+                </button>
+            </form>
 
-
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> calendar_month </i>
-                    <span>Calendário</span>
-                </span>
-            </button>
             <form action="/addAluno" method="get">
                 <button>
                     <span>
@@ -107,13 +108,14 @@
                 </button>
             </form>
 
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> Logout </i>
-                    <span>Sair</span>
-                </span>
-            </button>
-
+            <form action="/logout" method="get">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined"> Logout </i>
+                        <span>Sair</span>
+                    </span>
+                </button>
+            </form>
         </nav>
 
     </aside>
@@ -201,7 +203,7 @@
             </div>
         </div>
 
-        
+
 
         <div class="alunos mt-2">
             Alunos:
@@ -212,8 +214,8 @@
             <% for (let i=0; i<Alunos.length; i++) { %>
                 <div class="col-sm-12 col-md-4 mt-2 ">
                     <div class="shadow card h-100 ">
-                        <img src="/img/<%= Alunos[i].Foto %>"
-                            class="rounded-circle col-2 mx-auto img-fluid mt-5" alt="Foto aluno">
+                        <img src="/img/<%= Alunos[i].Foto %>" class="rounded-circle col-2 mx-auto img-fluid mt-5"
+                            alt="Foto aluno">
                         <div class="card-body">
                             <h5 class="card-title text-center">
                                 <%= Alunos[i].Nome %>

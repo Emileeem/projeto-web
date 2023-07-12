@@ -184,18 +184,17 @@
 
     <main class="main">
         <!-- Cadastro Matéria -->
-        <div
-            class="form-signin mt-5 formulario border-transparent shadow position-absolute top-50 start-50 translate-middle p-2  mb-4">
+        <div class="form-signin mt-5 formulario border-transparent shadow p-2  mb-4" >
 
 
             <h2 class="text-center mt-4 mb-4">
                 Criando nova Matéria
             </h2>
-
-            <form class="row g-7" action="/addMateria" method="post">
+            
+            <form class="row g-7" action="/addMateria/<%= DBedv.IDProfessor %>" method="post">
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-4">
                     <label class="form-label">Nome</label>
-                    <input type="text" class="form-control" placeholder="Título" name="Nome" required>
+                    <input type="text" class="form-control" placeholder="Título" name="NomeTurma" required>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-3">
@@ -215,14 +214,15 @@
                 </div>
             </form>
 
-            <a href="#" class="volta">
-                <span>
-                    <i class="material-symbols-outlined voltar1">undo</i>
-                    <span class="voltar">Voltar</span>
-                </span>
-            </a>
+                <a href="#" class = "volta">
+                    <span>
+                        <i class="material-symbols-outlined voltar1">undo</i>
+                        <span class="voltar">Voltar</span>
+                    </span>
+                </a>
     </main>
-    <script src="../JavaScript/menu.js"></script>
+    <script src="/js/menu.js"></script>
+    <script src="/js/comp.js"></script>
 </body>
 
 </html>

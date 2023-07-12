@@ -184,14 +184,14 @@
 
     <main class="main">
         <!-- Cadastro Matéria -->
-        <div class="form-signin mt-5 formulario border-transparent shadow p-2  mb-4" >
+        <div class="form-signin mt-5 formulario border-transparent shadow p-2  mb-4">
 
 
             <h2 class="text-center mt-4 mb-4">
                 Criando nova Matéria
             </h2>
-            
-            <form class="row g-7" action="/addMateria/<%= DBedv.IDProfessor %>" method="post">
+
+            <form class="row g-7" action="/addMateria" method="post">
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-4">
                     <label class="form-label">Nome</label>
                     <input type="text" class="form-control" placeholder="Título" name="NomeTurma" required>
@@ -209,17 +209,47 @@
                     </select>
                 </div>
 
-                <div class="col-12 w-100 col-md-4 butao mb-4">
-                    <input class="btn btn-primary w-100" type="submit" value="Enviar">
-                </div>
-            </form>
+                <!-- Cadastro Competências -->
+                <div class="competencias mt-5  p-4 mb-3 row g-7">
 
-                <a href="#" class = "volta">
-                    <span>
-                        <i class="material-symbols-outlined voltar1">undo</i>
-                        <span class="voltar">Voltar</span>
-                    </span>
-                </a>
+                    <h2 class="text-center mt-4 mb-4 ">
+                        Competências da Matéria
+                    </h2>
+
+                    <div class="col-12 col-sm-6 col-md-4 w-50 mb-4">
+                        <label class="form-label">Nome:</label>
+                        <input type="text" class="form-control" placeholder="Nome" name="Nome" required>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4 w-50 mb-4">
+                        <label class="form-label">Peso:</label>
+                        <input type="number" class="form-control" placeholder="Peso" name="Peso" required>
+                    </div>
+
+                    <div id="input" class="row g-7"></div>
+
+                    <button class="add mb-3" id="adicionar">
+                        <span>
+                            <abbr title="Adicionar Competência circle"> <i class="material-symbols-outlined ">
+                                    add_circle </i>
+                            </abbr>
+                        </span>
+                    </button>
+                    <div class="col-12 col-md-4 butao w-100 mb-4">
+                        <input class="btn btn-primary w-100" type="submit" value="Enviar">
+                    </div>
+
+                    <a href="#" class="volta">
+                        <span>
+                            <i class="material-symbols-outlined voltar1">undo</i>
+                            <span class="voltar">Voltar</span>
+                        </span>
+                    </a>
+            </form>
+        </div>
+        </div>
+
+        
     </main>
     <script src="/js/menu.js"></script>
     <script src="/js/comp.js"></script>

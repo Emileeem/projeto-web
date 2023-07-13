@@ -6,33 +6,32 @@ const arquivos = require("../model/arquivos");
 
 module.exports = {
   async materiaGet(req, res) {
+    session = req.session;
+
+    if (!session.edv) {
+      res.redirect("/");
+      return;
+    }
+
     const Materia = await materia.findByPk(req.params.IDMateria, {
       raw: true,
-    });
-    const Aluno = await aluno.findByPk(req.params.IDAluno, {
-      raw: true,
-    });
-    const Competencias = await competencias.findAll({
-      raw: true,
-      include: [
-        {
-          model: feedback,
-          where: {
-            IDMateria: req.params.IDMateria,
-            IDAluno: req.params.IDAluno,
-          },
-        },
-      ],
     });
     const Arquivos = await arquivos.findAll({
       raw: true,
       where: { IDMateria: req.params.IDMateria },
     });
-    console.log(Competencias);
-    res.render("../views/Materia", { Materia, Competencias, Arquivos, Aluno });
+
+    res.render("../views/Materia", { Materia, Arquivos, session });
   },
 
   async materiaProfGet(req, res) {
+    session = req.session;
+
+    if (!session.edv) {
+      res.redirect("/");
+      return;
+    }
+
     const Materia = await materia.findByPk(req.params.IDMateria, {
       raw: true,
     });

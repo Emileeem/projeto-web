@@ -1,28 +1,31 @@
 // Importação
 const Sequelize = require("sequelize");
 const database = require("../config/db");
-const materia = require("./materia");
+const competencias = require("./competencia");
+const aluno = require("./aluno");
 
 // Criando tabela
-const competencias = database.define("Competencias", {
-  IDCompetencia: {
+const situacao = database.define("Competencias", {
+  IDSituacao: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true,
   },
-  Nome: {
+  Situacao: {
     type: Sequelize.STRING(90),
     allowNull: false,
   },
-  Peso: {
-    type: Sequelize.INTEGER,
-  },
 });
 
-competencias.belongsTo(materia, {
+situacao.belongsTo(competencias, {
+  constraint: true,
+  foreignKey: "IDCompetencia",
+});
+
+situacao.belongsTo(aluno, {
   constraint: true,
   foreignKey: "IDMateria",
 });
 
-module.exports = competencias;
+module.exports = situacao;

@@ -1,7 +1,5 @@
 const materia = require("../model/materia");
 const aluno = require("../model/aluno");
-const feedback = require("../model/feedback");
-const competencias = require("../model/competencia");
 const arquivos = require("../model/arquivos");
 
 module.exports = {

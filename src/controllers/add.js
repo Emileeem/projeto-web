@@ -1,11 +1,10 @@
 const turma = require("../model/turma");
-const professor = require("../model/professor");
 const aluno = require("../model/aluno");
+const arquivo = require("../model/arquivos");
 const materia = require("../model/materia");
-const arquivos = require("../model/arquivos");
-const competencias = require("../model/competencia");
-
-// const turmaMateria = require('../model/turmaMateria');
+const feedback = require("../model/feedback");
+const competencia = require("../model/competencia");
+const situacao = require("../model/situacao");
 
 module.exports = {
   async AddPdfGet(req, res) {
@@ -19,7 +18,6 @@ module.exports = {
     const Materia = await materia.findByPk(req.params.IDMateria, {
       raw: true,
     });
-    console.log(Materia.IDMateria);
     res.render("../views/AddPdf", { Materia });
   },
 
@@ -32,7 +30,7 @@ module.exports = {
     }
 
     const dados = req.body;
-    await arquivos.create({
+    await arquivo.create({
       Nome: dados.titulo,
       Caminho: dados.caminho,
       IDMateria: req.params.IDMateria,
@@ -48,48 +46,61 @@ module.exports = {
       return;
     }
 
-    const turmas = await turma.findAll({
+    const Turmas = await turma.findAll({
       raw: true, //retorna informações da tabela sem metadados.
       attributes: ["IDTurma", "Nome"],
     });
 
-    res.render("../views/addMat", { turmas, session });
+    res.render("../views/addMat", { Turmas, session });
   },
 
   async addMateriaPost(req, res) {
+    const dados = req.body;
     session = req.session;
+    var IDCompetencias = [];
 
     if (!session.edv) {
       res.redirect("/");
       return;
     }
 
-    const dados = req.body;
-    // const Materia = await materia.create({
-    //   Nome: dados.NomeMateria,
-    //   IDProfessor: req.params.IDProfessor,
-    //   IDTurma: dados.Turma,
-    // });
+    const Materias = await materia.create({
+      Nome: dados.NomeMateria,
+      IDProfessor: session.edv,
+      IDTurma: dados.Turma,
+    });
 
-    // // const Alunos = await aluno.findAll({
-    // //   raw: true,
-    // //   where: {IDTurma: dados.Turma}
-    // // });
+    const Alunos = await aluno.findAll({
+      raw: true,
+      where: { IDTurma: dados.Turma },
+    });
 
-    // // for(i= 0; i<Alunos.IDAluno.length; i++){
-    // //   const Feedback = await Feedback.create({
-    // //     IDMateria: Materia.IDMateria,
-    // //     IDAluno: Alunos[i].IDAluno,
-    // //   });
-    // //   for(i=0; i<dados.Nome.length; i++){
-    // //     await competencias.create({
-    // //       Nome: dados.Nome[i],
-    // //       Peso: dados.Peso[i],
-    // //       IDFeedback: Feedback.IDFeedback
-    // //     })
-    // //   }
-    // // }
+    for (let i = 0; i < dados.Nome.length; i++) {
+      const Competencias = await competencia.create({
+        Nome: dados.Nome[i],
+        Peso: dados.Peso[i],
+        IDMateria: Materias.IDMateria
+      });
+      IDCompetencias.push(Competencias.IDCompetencia);
+    }
 
-    res.redirect(`/homeprof/${req.params.IDProfessor}`);
+    for (let i = 0; i < Alunos.length; i++) {
+      for (let j = 0; j < IDCompetencias.length; j++) {
+        const Situacaos = await situacao.create({
+          IDCompetencia: IDCompetencias[j],
+          Situacao: "Inapto",
+          IDAluno: Alunos[i].IDAluno,
+        });
+      }
+
+      await feedback.create({
+        IDMateria: Materias.IDMateria,
+        IDAluno: Alunos[i].IDAluno,
+      })
+    }
+
+
+
+    res.redirect(`/homeprof`);
   },
 };

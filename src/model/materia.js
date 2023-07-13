@@ -1,8 +1,8 @@
 // Importação
 const Sequelize = require("sequelize");
 const database = require("../config/db");
-const turma = require("./turma");
 const professor = require("./professor");
+const turma = require("./turma");
 
 // Criando tabela
 const materia = database.define("Materia", {

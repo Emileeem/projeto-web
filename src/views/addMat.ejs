@@ -30,7 +30,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@500&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
@@ -194,16 +193,16 @@
             <form class="row g-7" action="/addMateria" method="post">
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-4">
                     <label class="form-label">Nome</label>
-                    <input type="text" class="form-control" placeholder="Título" name="NomeTurma" required>
+                    <input type="text" class="form-control" placeholder="Título" name="NomeMateria" required>
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-3">
                     <label class="form-label">Turma:</label>
                     <select name="Turma" id="" class="form-control" required>
                         <option disabled selected> Selecione </option>
-                        <% for (let i=0; i<turmas.length; i++) { %>
-                            <option value='<%=turmas[i].IDTurma%>'>
-                                <%= turmas[i].Nome %>
+                        <% for (let i=0; i<Turmas.length; i++) { %>
+                            <option value='<%=Turmas[i].IDTurma%>'>
+                                <%= Turmas[i].Nome %>
                             </option>
                             <% } %>
                     </select>
@@ -239,7 +238,7 @@
                         <input class="btn btn-primary w-100" type="submit" value="Enviar">
                     </div>
 
-                    <a href="#" class="volta">
+                    <a href="/homeProf" class="volta">
                         <span>
                             <i class="material-symbols-outlined voltar1">undo</i>
                             <span class="voltar">Voltar</span>

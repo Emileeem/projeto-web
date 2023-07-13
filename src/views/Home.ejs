@@ -95,12 +95,14 @@
             </span>
         </button>
 
-        <button>
-            <span>
-                <i class="material-symbols-outlined"> home </i>
-                <span class="mobile-text">Início</span>
-            </span>
-        </button>
+        <form action="/home" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> home </i>
+                    <span>Início</span>
+                </span>
+            </button>
+        </form>
 
         <button>
             <span>
@@ -109,12 +111,14 @@
             </span>
         </button>
 
-        <button>
-            <span>
-                <i class="material-symbols-outlined"> Logout </i>
-                <span class="mobile-text">Sair</span>
-            </span>
-        </button>
+        <form action="/logout" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> Logout </i>
+                    <span>Sair</span>
+                </span>
+            </button>
+        </form>
     </nav>
 
     <main class="main">
@@ -129,7 +133,7 @@
         <div class="row m-4">
             <% for (let i=0; i< Materia.length; i++) {%>
                 <div class="col-sm-12 col-md-4 mb-5 mt-5 ">
-                    <a href="/<%= session.edv %>/materia/<%= Materia[i].IDMateria %>">
+                    <a href="/materia/<%= Materia[i].IDMateria %>">
                         <div class="shadow card h-100 ">
                             <img src="/img/roxo.png" class="col-2 img-fluid card-img-top cor" alt="cor sala">
                             <div class="card-body">

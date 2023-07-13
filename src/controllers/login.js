@@ -24,28 +24,33 @@ module.exports = {
 
     try {
       if (cargo == "Professor") {
-        const DBedv = await professor.findByPk(edv, {
+        const Aluno = await professor.findByPk(edv, {
           raw: true,
         });
-        if (DBedv.Senha == senha) {
+        if (Aluno.Senha == senha) {
           // res.redirect(`/homeprof/${DBedv.IDProfessor}`);
-          session.edv = DBedv.IDProfessor;
-          session.nome = DBedv.Nome;
-          session.foto = DBedv.Foto;
+          session.edv = Aluno.IDProfessor;
+          session.nome = Aluno.Nome;
+          session.foto = Aluno.Foto;
           console.log(session);
           res.redirect(`/homeprof`);
+        } else {
+          erro = true;
+          res.render("../views/Login", { erro });
         }
       } else {
-        const DBedv = await aluno.findByPk(edv, {
+        const Aluno = await aluno.findByPk(edv, {
           raw: true,
         });
-        console.log(DBedv);
-        if (DBedv.Senha == senha) {
-          session.edv = DBedv.IDAluno;
-          session.nome = DBedv.Nome;
-          session.foto = DBedv.Foto;
-          session.turma = DBedv.IDTurma;
+        if (Aluno.Senha == senha) {
+          session.edv = Aluno.IDAluno;
+          session.nome = Aluno.Nome;
+          session.foto = Aluno.Foto;
+          session.turma = Aluno.IDTurma;
           res.redirect(`/home`);
+        } else {
+          erro = true;
+          res.render("../views/Login", { erro });
         }
       }
     } catch (error) {
@@ -54,7 +59,7 @@ module.exports = {
     }
   },
   async logout(req, res) {
-    await req.session.destroy()
+    await req.session.destroy();
     res.redirect("/");
   },
 };

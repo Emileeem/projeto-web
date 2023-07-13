@@ -24,7 +24,7 @@ route.get('/homeprof', home.HomeProfGet);
 
 route.get('/addPdf/:IDMateria', add.AddPdfGet).post('/addPdf/:IDMateria', add.AddPdfPost);
 
-route.get('/:IDAluno/materia/:IDMateria', materia.materiaGet);
+route.get('/materia/:IDMateria', materia.materiaGet);
 
 route.get('/materiaProf/:IDMateria', materia.materiaProfGet);
 

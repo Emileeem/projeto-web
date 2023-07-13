@@ -3,12 +3,19 @@ const professor = require("../model/professor");
 const aluno = require("../model/aluno");
 const materia = require("../model/materia");
 const arquivos = require("../model/arquivos");
-const competencias= require("../model/competencia")
+const competencias = require("../model/competencia");
 
 // const turmaMateria = require('../model/turmaMateria');
 
 module.exports = {
   async AddPdfGet(req, res) {
+    session = req.session;
+
+    if (!session.edv) {
+      res.redirect("/");
+      return;
+    }
+
     const Materia = await materia.findByPk(req.params.IDMateria, {
       raw: true,
     });
@@ -17,6 +24,13 @@ module.exports = {
   },
 
   async AddPdfPost(req, res) {
+    session = req.session;
+
+    if (!session.edv) {
+      res.redirect("/");
+      return;
+    }
+
     const dados = req.body;
     await arquivos.create({
       Nome: dados.titulo,
@@ -43,6 +57,13 @@ module.exports = {
   },
 
   async addMateriaPost(req, res) {
+    session = req.session;
+
+    if (!session.edv) {
+      res.redirect("/");
+      return;
+    }
+
     const dados = req.body;
     // const Materia = await materia.create({
     //   Nome: dados.NomeMateria,

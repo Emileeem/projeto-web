@@ -11,7 +11,7 @@ const login = require("./src/controllers/login");
 const add = require("./src/controllers/add");
 const materia = require("./src/controllers/materia");
 const cadastro = require("./src/controllers/cadastro");
-const calendar = require("./src/controllers/calendario");
+const avaliacao = require("./src/controllers/avaliacao");
 
 // Iniciando as rotas
 route
@@ -54,10 +54,6 @@ route
   .post("/addMateria", add.addMateriaPost);
 
 route
-  .get("/calendarioProf/:IDTurma", calendar.calendarGet)
-  .post("/calendarioProf/:IDTurma", calendar.calendarInsert);
-
-route
-  .get("/evento", calendar.eventosGet);
+  .get("/AvaliacaoEstudantes/:IDAluno", avaliacao.avaliacaoGet);
 
 module.exports = route;

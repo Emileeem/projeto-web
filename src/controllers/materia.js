@@ -72,15 +72,20 @@ module.exports = {
         case "Em Desenvolvimento":
           desempenho += Situacao[i]["Competencia.Peso"] / 2;
           break;
-        case "Inapto":
+        case "Apto":
           desempenho += Situacao[i]["Competencia.Peso"];
           break;
       }
       total += Situacao[i]["Competencia.Peso"];
     }
 
+    const Arquivos = await arquivos.findAll({
+      raw: true,
+      where: { IDMateria: req.params.IDMateria },
+    });
+
     let aptidao = (desempenho / total) * 100;
 
-    res.render("../views/materiasProf", { Materia, Alunos, aptidao });
+    res.render("../views/materiasProf", { Materia, Alunos, aptidao, Arquivos });
   },
 };

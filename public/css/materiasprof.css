@@ -256,6 +256,12 @@ body {
 }
 
 /**main **/
+.title-media{
+    font-size: 25px;
+}
+.alunoss{
+    text-decoration: none;
+}
 
 /**Nome**/
 .all {
@@ -343,29 +349,6 @@ body {
         stroke-dashoffset: 157.5;
     }
 }
-
-/**chat **/
-.but{
-    background-color: rgb(117, 186, 255);
-    position: fixed;
-    top: 93%;
-    right: 3%;
-    border-radius: 15px;
-    border: transparent;
-    height: 50px;
-    width: 90px;
-}
-.chat{
-    font-size: 40px !important;
-    height: 30px;
-    width: 30px;
-}
-.escrita{
-    position: relative;
-    top: -17px;
-    font-weight: bold;
-    padding: 5px;
-}
 @media (max-width: 480px) {
     .nome-mat {
         z-index: 100;
@@ -379,7 +362,9 @@ body {
         left: 0;
         font-weight: bolder;
     }
-
+    .edit{
+        left: 30%;
+    }
     .cabeca {
         display: none;
     }
@@ -421,9 +406,11 @@ body {
         height: 40px;
         width: 70px;
     }
-    .chat{
-        font-size: 30px !important;
-        height: 30px;
-        width: 30px;
+
+}
+
+@media(max-width: 321px){
+    .edit{
+        left: 25%;
     }
 }

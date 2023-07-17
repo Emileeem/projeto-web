@@ -331,7 +331,7 @@ body{
         0px 12px 10px -10px rgba(0, 0, 0, 0.05);
 }
 
-#number {
+.numero {
     font-weight: 600;
     color: #555;
     font-size: 30px;
@@ -347,10 +347,6 @@ body{
     text-align: center;
     padding: 10px;
     font-weight: bolder;
-}
-.linha{
-    border: 1px solid #805841;
-    border-radius: 5px;
 }
 img {
 	display: block;

@@ -29,7 +29,7 @@ route
 
 route
   .get("/addPdf/:IDMateria", add.AddPdfGet)
-  .post("/addPdf/:IDMateria", add.AddPdfPost);
+  .post("/addPdf/:IDMateria", multer(config).single("foto"), add.AddPdfPost);
 
 route
   .get("/materia/:IDMateria", materia.materiaGet);

@@ -37,55 +37,17 @@
         </nav>
     </header>
     <!-- -------- -->
-        <!-- Menu com click -->
+    <!-- Menu com click -->
 
-        <aside class="sidebar shadow">
-            <header class="sidebarheader">
-                <img class="logo-img" src="/img/<%= session.foto %>" alt="foto do usuario">
-            </header>
-            <span class="edv2">
-                <i class="material-symbols-outlined"> badge </i>
-                <span><b class="edv">EDV: <%= session.edv %> </b></span>
-            </span>
-            <nav>
-                <form action="/home" method="get">
-                    <button>
-                        <span>
-                            <i class="material-symbols-outlined"> home </i>
-                            <span>Início</span>
-                        </span>
-                    </button>
-                </form>
-                <button>
-                    <span>
-                        <i class="material-symbols-outlined"> calendar_month </i>
-                        <span>Calendário</span>
-                    </span>
-                </button>
-                <form action="/logout" method="get">
-                    <button>
-                        <span>
-                            <i class="material-symbols-outlined"> Logout </i>
-                            <span>Sair</span>
-                        </span>
-                    </button>
-                </form>
-            </nav>
-    
-        </aside>
-        <!-- Menu p celular -->
-        <button class="button-mobile" onclick="toggleMenu()">
-            <i class="material-symbols-outlined"> menu </i>
-            <span><b class="">Menu</b></span>
-        </button>
-    
-        <nav class="menu-mobile" id="menu-mobile">
-            <button class="close" onclick="toggleMenu()">
-                <span>
-                    <i class="material-symbols-outlined"> close </i>
-                </span>
-            </button>
-    
+    <aside class="sidebar shadow">
+        <header class="sidebarheader">
+            <img class="logo-img" src="/img/<%= session.foto %>" alt="foto do usuario">
+        </header>
+        <span class="edv2">
+            <i class="material-symbols-outlined"> badge </i>
+            <span><b class="edv">EDV: <%= session.edv %> </b></span>
+        </span>
+        <nav>
             <form action="/home" method="get">
                 <button>
                     <span>
@@ -94,14 +56,12 @@
                     </span>
                 </button>
             </form>
-    
             <button>
                 <span>
                     <i class="material-symbols-outlined"> calendar_month </i>
-                    <span class="mobile-text">Calendário</span>
+                    <span>Calendário</span>
                 </span>
             </button>
-    
             <form action="/logout" method="get">
                 <button>
                     <span>
@@ -111,6 +71,46 @@
                 </button>
             </form>
         </nav>
+
+    </aside>
+    <!-- Menu p celular -->
+    <button class="button-mobile" onclick="toggleMenu()">
+        <i class="material-symbols-outlined"> menu </i>
+        <span><b class="">Menu</b></span>
+    </button>
+
+    <nav class="menu-mobile" id="menu-mobile">
+        <button class="close" onclick="toggleMenu()">
+            <span>
+                <i class="material-symbols-outlined"> close </i>
+            </span>
+        </button>
+
+        <form action="/home" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> home </i>
+                    <span>Início</span>
+                </span>
+            </button>
+        </form>
+
+        <button>
+            <span>
+                <i class="material-symbols-outlined"> calendar_month </i>
+                <span class="mobile-text">Calendário</span>
+            </span>
+        </button>
+
+        <form action="/logout" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> Logout </i>
+                    <span>Sair</span>
+                </span>
+            </button>
+        </form>
+    </nav>
 
     <!-- Main -->
     <main class="main">
@@ -148,19 +148,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                      
-                        <tr>
-                            <th scope="row">
-                              
-                            </th>
-                            <td>
-                              
-                            </td>
-                            <td>
-                                
-                            </td>
-                        </tr>
-                                               
+                        <% for( let i = 0; i < Competencias.length; i++ ) { %> 
+                            <tr>
+                                <th scope="row">
+                                    <%= Competencias[i]['Competencia.Peso'] %>
+                                </th>
+                                <td>
+                                    <%= Competencias[i]['Competencia.Nome'] %>
+                                </td>
+                                <td>
+                                    <%= Competencias[i].Situacao %>
+                                </td>
+                            </tr>
+                        <% } %>
+
                     </tbody>
                 </table>
                 <!-- arquivos -->

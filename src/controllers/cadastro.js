@@ -1,7 +1,11 @@
 //importando as tabelas do banco de dados
+const materia = require("../model/materia");
 const turma = require("../model/turma");
 const aluno = require("../model/aluno");
 const professor = require("../model/professor");
+const competencia = require("../model/competencia");
+const situacao = require("../model/situacao");
+const feedback = require("../model/feedback");
 
 module.exports = {
   async turmaGet(req, res) {
@@ -70,7 +74,7 @@ module.exports = {
       foto = req.file.filename;
     }
 
-    await aluno.create({
+    const Aluno = await aluno.create({
       IDAluno: dados.EDV,
       Nome: dados.Nome,
       Senha: dados.Senha,
@@ -78,6 +82,28 @@ module.exports = {
       IDTurma: dados.Turma,
     });
 
+    const Materias = await materia.findAll({
+      raw: true,
+      where: { IDTurma: dados.Turma },
+    });
+
+    for (let i = 0; i < Materias.length; i++) {
+      const Competencias = await competencia.findAll({
+        raw: true,
+        where: { IDMateria: Materias[i].IDMateria },
+      });
+      await feedback.create({
+        IDMateria: Materias[i].IDMateria,
+        IDAluno: Aluno.IDAluno,
+      });
+      for (let j = 0; j < Competencias.length; j++) {
+        await situacao.create({
+          Situacao: "Inapto",
+          IDAluno: Aluno.IDAluno,
+          IDCompetencia: Competencias[j].IDCompetencia,
+        });
+      }
+    }
     //Redirecionando para a página inicial
     res.redirect(`/homeprof`);
   },
@@ -110,8 +136,6 @@ module.exports = {
       // Pegar novo nome da foto
       foto = req.file.filename;
     }
-
-    console.log(req.body);
 
     await professor.create({
       IDProfessor: dados.EDV,

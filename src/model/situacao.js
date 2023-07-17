@@ -5,7 +5,7 @@ const competencias = require("./competencia");
 const aluno = require("./aluno");
 
 // Criando tabela
-const situacao = database.define("Competencias", {
+const situacao = database.define("Situacao", {
   IDSituacao: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
@@ -25,7 +25,7 @@ situacao.belongsTo(competencias, {
 
 situacao.belongsTo(aluno, {
   constraint: true,
-  foreignKey: "IDMateria",
+  foreignKey: "IDAluno",
 });
 
 module.exports = situacao;

@@ -26,7 +26,6 @@ module.exports = {
           session.edv = Aluno.IDProfessor;
           session.nome = Aluno.Nome;
           session.foto = Aluno.Foto;
-          console.log(session);
           res.redirect(`/homeprof`);
         } else {
           erro = true;

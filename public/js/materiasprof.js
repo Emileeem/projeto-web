@@ -1,8 +1,11 @@
 let numero = document.getElementById('number');
 let contador = 0;
+let max = numero.innerHTML;
+
+console.log(max);
 
 setInterval(()=> {
-    if(contador == 65){
+    if(contador == max){
         clearInterval;
     }
     else{

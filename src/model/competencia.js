@@ -12,11 +12,12 @@ const competencias = database.define("Competencias", {
     primaryKey: true,
   },
   Nome: {
-    type: Sequelize.STRING(90),
+    type: Sequelize.STRING(150),
     allowNull: false,
   },
   Peso: {
     type: Sequelize.INTEGER,
+    allowNull: false,
   },
 });
 

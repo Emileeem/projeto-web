@@ -79,7 +79,7 @@ module.exports = {
       const Competencias = await competencia.create({
         Nome: dados.Nome[i],
         Peso: dados.Peso[i],
-        IDMateria: Materias.IDMateria
+        IDMateria: Materias.IDMateria,
       });
       IDCompetencias.push(Competencias.IDCompetencia);
     }
@@ -96,11 +96,8 @@ module.exports = {
       await feedback.create({
         IDMateria: Materias.IDMateria,
         IDAluno: Alunos[i].IDAluno,
-      })
+      });
     }
-
-
-
     res.redirect(`/homeprof`);
   },
 };

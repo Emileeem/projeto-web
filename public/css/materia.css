@@ -9,7 +9,7 @@ p{font-family: Calibri, sans-serif;}
 }
 
 .linha {
-    background-image: url(../imagens/rainbow.svg);
+    background-image: url(../img/rainbow.svg);
     background-repeat: no-repeat;
     height: 8px;
     background-size: cover;
@@ -282,29 +282,6 @@ body{
 .logo-inside{
     width: 50%;
 }
-
-/**chat **/
-.but{
-    background-color: rgb(117, 186, 255);
-    position: fixed;
-    top: 93%;
-    right: 3%;
-    border-radius: 15px;
-    border: transparent;
-    height: 40px;
-    width: 90px;
-}
-.chat{
-    font-size: 40px !important;
-    height: 30px;
-    width: 30px;
-}
-.escrita{
-    position: relative;
-    top: -17px;
-    font-weight: bold;
-    padding: 5px;
-}
 /** nome materia **/
 .nome-mat {
     z-index: 100;
@@ -316,7 +293,10 @@ body{
     left: 0;
     font-weight: bolder;
 }
-
+.media-turma{
+    font-size: 30px;
+}
+/**Circulo de media **/
 /**circulo de média **/
 
 .skill {
@@ -361,13 +341,51 @@ body{
     text-align: center;
     font-size: 28px;
 }
+/**card arquivos **/
+.projetos{
+    font-size: 23px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bolder;
+}
+.linha{
+    border: 1px solid #805841;
+    border-radius: 5px;
+}
+img {
+	display: block;
+	max-width: 100%;
+}
+
+.stack {
+	width: 85%;
+	max-width: 400px;
+    margin: 2%;
+}
+.card {
+	aspect-ratio: 3 / 2;
+	transition: .15s ease;
+	cursor: pointer;
+	padding: 5% 5% 15% 5%;
+    width: 300px;
+	
+}
+.image {
+	width: 100%;
+	border: 2px solid lightgray;
+	aspect-ratio: 1 / 1;
+	position: relative;}
+
+/**fim card **/
+
 @media (max-width: 425px) {
+    .card{
+        width: 200px;
+        margin: 0 !important;
+    }
     header{
         width: 100%;
         text-align: center;
-    }
-    .logo-inside{
-        width: 100%;
     }
     .nav-text{
         display: none;
@@ -390,6 +408,8 @@ body{
         font-size: 25px;
         display: flex;
         font-weight: bold;
+        position: relative;
+        left: 4%;
     }
 
     .teste-img{
@@ -427,6 +447,29 @@ body{
     }
     .emyli{
         display: none !important;
+    }
+    .peso{
+        border-radius: 10px;
+        width: 7vh;
+        height: auto;
+        margin-right: 3%; 
+        padding: 3%;
+    }
+    .nome{
+        border-radius: 10px;
+        width: 15vh;
+        height: auto;
+        word-wrap: break-word;
+        padding: 3%;
+        margin-right: 3%;
+    }
+    .situacao{
+        border-radius: 10px;
+        width: 12vh;
+        height: auto;
+        margin-right: 3%;
+        word-wrap: break-word;
+        padding: 3%;
     }
 }
 

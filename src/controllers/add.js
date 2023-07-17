@@ -6,6 +6,7 @@ const feedback = require("../model/feedback");
 const competencia = require("../model/competencia");
 const situacao = require("../model/situacao");
 
+
 module.exports = {
   async AddPdfGet(req, res) {
     session = req.session;
@@ -29,10 +30,13 @@ module.exports = {
       return;
     }
 
+    // Pegar novo nome da foto
+    let caminho = req.file.filename;
+
     const dados = req.body;
     await arquivo.create({
       Nome: dados.titulo,
-      Caminho: dados.caminho,
+      Caminho: caminho,
       IDMateria: req.params.IDMateria,
     });
     res.redirect(`/materiaProf/${req.params.IDMateria}`);

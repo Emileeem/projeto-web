@@ -187,28 +187,19 @@
         <div
             class="form-signin mt-5 formulario border-transparent shadow position-absolute top-50 start-50 translate-middle p-2  mb-4">
 
-            <form class="row g-7" action="/addPdf/<%= Materia.IDMateria %>" method="post">
+            <form class="row g-7" action="/addPdf/<%= Materia.IDMateria %>" method="post" enctype="multipart/form-data">
 
                 <h2 class="text-center mt-4 mb-4">
                     Adicionar PDF's
                 </h2>
-                <!-- <div class="col-12 col-sm-6 col-md-4 w-100 mb-3">
-                    <label for="Sala" class="form-label">Sala:</label>
-                    <select name="sala" id="Sala" class="form-control" required>
-                        <option value="" disabled selected> Selecione </option>
-                        <option value=""> Python </option>
-                        <option value=""> Sql </option>
-                    </select>
-                </div> -->
-
                 <div class="col-12 col-sm-6 col-md-4 w-100 mb-4">
                     <label class="form-label">Título</label>
-                    <input type="text" class="form-control" placeholder="Título" name="titulo" required>
+                    <input type="text" class="form-control" placeholder="Título" name="titulo"  required>
                 </div>
 
-                <div class="mb-3">
-                    <label for="formFile" class="form-label">Coloque aqui o PDF:</label>
-                    <input class="form-control" type="file" name="caminho" id="formFile">
+                <div for="formFile" class="mb-3">
+                    <label for="flImage" class="form-label">Coloque aqui o PDF:</label>
+                    <input class="form-control" type="file" name="foto" id="flImage">
                 </div>
 
                 <div class="col-12 w-100 col-md-4 butao mb-4">
@@ -222,7 +213,7 @@
                 </span>
             </a>
     </main>
-    <script src="../JavaScript/menu.js"></script>
+    <script src="/js/menu.js"></script>
 </body>
 
 </html>

@@ -33,7 +33,24 @@ module.exports = {
       where: {IDAluno: session.edv}
     });
 
-    res.render("../views/Materia", { Materia, Arquivos, session, Competencias });
+    let total = 0;
+    let desempenho = 0;
+
+    for (let i = 0; i < Competencias.length; i++) {
+      switch (Competencias[i].Situacao) {
+        case "Inapto":
+          break;
+        case "Em Desenvolvimento":
+          desempenho += Competencias[i]["Competencia.Peso"] / 2;
+          break;
+        case "Inapto":
+          desempenho += Competencias[i]["Competencia.Peso"];
+          break;
+      }
+      total += Competencias[i]["Competencia.Peso"];
+    }
+    let aptidao = (desempenho / total) * 100;
+    res.render("../views/Materia", { Materia, Arquivos, session, Competencias, aptidao });
   },
 
   async materiaProfGet(req, res) {

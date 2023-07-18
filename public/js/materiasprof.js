@@ -10,6 +10,6 @@ setInterval(()=> {
     }
     else{
         contador +=1;
-        numero.innerHTML = `${contador}%`;
+        numero.innerHTML = `${contador}`;
     }
 }, 30)

@@ -2,6 +2,7 @@ const competencias = require("../model/competencia");
 const aluno = require("../model/aluno")
 const situacao = require("../model/situacao");
 const materia =  require("../model/materia")
+const feedback = require("../model/feedback")
 
 module.exports = {
     async avaliacaoGet(req, res) {
@@ -26,7 +27,6 @@ module.exports = {
                 where: { IDMateria: req.params.IDMateria }
             }]
         })
-        console.log(Aluno.Nome)
         res.render("../views/AvaliacaoEstudantes", { session, Competencias, Aluno, Materia })
     },
     async avaliacaoPost(req, res) {
@@ -52,6 +52,12 @@ module.exports = {
                 IDAluno: req.params.IDAluno
             }})
         }
+
+        await situacao.update({Descricao: dados.comentario}, { where: {
+                IDMateria: req.params.IDMateria,
+                IDAluno: req.params.IDAluno
+        }})
+        
         res.redirect(`/materiaProf/${req.params.IDMateria}`);
     }
 }

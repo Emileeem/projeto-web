@@ -6,7 +6,6 @@ const feedback = require("../model/feedback");
 const competencia = require("../model/competencia");
 const situacao = require("../model/situacao");
 
-
 module.exports = {
   async AddPdfGet(req, res) {
     session = req.session;
@@ -63,11 +62,6 @@ module.exports = {
     session = req.session;
     var IDCompetencias = [];
 
-    if (!session.edv) {
-      res.redirect("/");
-      return;
-    }
-
     const Materias = await materia.create({
       Nome: dados.NomeMateria,
       IDProfessor: session.edv,
@@ -79,18 +73,26 @@ module.exports = {
       where: { IDTurma: dados.Turma },
     });
 
-    for (let i = 0; i < dados.Nome.length; i++) {
+    if (Array.isArray(dados.Nome)) {
+      for (let i = 0; i < dados.Nome.length; i++) {
+        const Competencias = await competencia.create({
+          Nome: dados.Nome[i],
+          Peso: dados.Peso[i],
+          IDMateria: Materias.IDMateria,
+        });
+        IDCompetencias.push(Competencias.IDCompetencia);
+      }
+    } else {
       const Competencias = await competencia.create({
-        Nome: dados.Nome[i],
-        Peso: dados.Peso[i],
+        Nome: dados.Nome,
+        Peso: dados.Peso,
         IDMateria: Materias.IDMateria,
       });
       IDCompetencias.push(Competencias.IDCompetencia);
     }
-
     for (let i = 0; i < Alunos.length; i++) {
       for (let j = 0; j < IDCompetencias.length; j++) {
-        const Situacaos = await situacao.create({
+        await situacao.create({
           IDCompetencia: IDCompetencias[j],
           Situacao: "Inapto",
           IDAluno: Alunos[i].IDAluno,

@@ -196,7 +196,9 @@
                     <div class="fora">
                         <div class="dentro">
                             <div class="numero">
-                                <span id="number"><%= aptidao %></span>%
+                                <span id="number">
+                                    <%= aptidao %>
+                                </span>%
                             </div>
                         </div>
                     </div>
@@ -218,11 +220,13 @@
                         <div class="shadow card h-100 ">
                             <img src="/img/<%= Alunos[i].Foto %>" class="rounded-circle col-2 mx-auto img-fluid mt-5"
                             alt="Foto aluno">
-                            <div class="card-body">
-                                <h5 class="card-title text-center">
-                                    <%= Alunos[i].Nome %>
-                                </h5>
-                            </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                <%= Alunos[i].Nome %>
+                            </h5>
+                            <p class="text-center">Idade: Haha
+                            </p>
+
                         </div>
                     </a>
                 </div>

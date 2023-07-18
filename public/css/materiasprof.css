@@ -261,6 +261,7 @@ body {
 }
 .alunoss{
     text-decoration: none;
+    color: #000;
 }
 
 /**Nome**/
@@ -332,6 +333,7 @@ body {
 .alunos {
     font-size: 28px;
 }
+
 .img-fluid {
     width: 150px;
     height: 150px;

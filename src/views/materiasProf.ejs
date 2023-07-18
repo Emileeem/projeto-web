@@ -56,7 +56,7 @@
 
     <!-- Menu com click -->
 
-    <aside class="sidebar shadow">
+ <aside class="sidebar shadow">
         <header class="sidebarheader">
             <img class="logo-img" src="/img/<%= session.foto %>" alt="foto do usuario">
         </header>
@@ -70,14 +70,6 @@
                     <span>
                         <i class="material-symbols-outlined"> home </i>
                         <span>Início</span>
-                    </span>
-                </button>
-            </form>
-            <form action="/calendarioProf/<%= session.edv %>" method="get">
-                <button>
-                    <span>
-                        <i class="material-symbols-outlined"> calendar_month </i>
-                        <span>Calendário</span>
                     </span>
                 </button>
             </form>
@@ -141,13 +133,6 @@
             </button>
         </form>
 
-        <button>
-            <span>
-                <i class="material-symbols-outlined"> calendar_month </i>
-                <span class="mobile-text">Calendário</span>
-            </span>
-        </button>
-
         <form action="/addAluno" method="get">
             <button>
                 <span>
@@ -180,6 +165,7 @@
             </span>
         </button>
     </nav>
+
 
     <main class="main">
         <!--Título da matéria -->
@@ -224,10 +210,13 @@
                             <h5 class="card-title text-center">
                                 <%= Alunos[i].Nome %>
                             </h5>
+                            <p class="text-center">EDV: <%= Alunos[i].IDAluno %>
+                            </p>
+                        </div>
                         </div>
                     </a>
                 </div>
-                <% } %>
+            <% } %>
 
         </div>
         <form action="/addPdf/<%= Materia.IDMateria %>" method="get">

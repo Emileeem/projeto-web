@@ -1,6 +1,6 @@
 let numero = document.getElementById('number');
 let contador = 0;
-let max = numero.innerHTML;
+let max =  Math.round(numero.innerHTML);
 
 console.log(max);
 
@@ -10,6 +10,6 @@ setInterval(()=> {
     }
     else{
         contador +=1;
-        numero.innerHTML = `${contador}%`;
+        numero.innerHTML = `${contador}`;
     }
 }, 30)

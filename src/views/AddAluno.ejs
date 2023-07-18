@@ -55,8 +55,7 @@
     <!-- -------- -->
 
 
-    <!-- Menu com click -->
-
+    
     <aside class="sidebar shadow">
         <header class="sidebarheader">
             <img class="logo-img" src="/img/<%= session.foto %>" alt="foto do usuario">
@@ -71,14 +70,6 @@
                     <span>
                         <i class="material-symbols-outlined"> home </i>
                         <span>Início</span>
-                    </span>
-                </button>
-            </form>
-            <form action="/calendarioProf/<%= session.edv %>" method="get">
-                <button>
-                    <span>
-                        <i class="material-symbols-outlined"> calendar_month </i>
-                        <span>Calendário</span>
                     </span>
                 </button>
             </form>
@@ -120,6 +111,60 @@
         </nav>
 
     </aside>
+    <!-- Menu p celular -->
+    <button class="button-mobile" onclick="toggleMenu()">
+        <i class="material-symbols-outlined"> menu </i>
+        <span><b class="">Menu</b></span>
+    </button>
+
+    <nav class="menu-mobile" id="menu-mobile">
+        <button class="close" onclick="toggleMenu()">
+            <span>
+                <i class="material-symbols-outlined"> close </i>
+            </span>
+        </button>
+
+        <form action="/homeprof" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> home </i>
+                    <span class="mobile-text">Início</span>
+                </span>
+            </button>
+        </form>
+
+        <form action="/addAluno" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> school </i>
+                    <span class="mobile-text">Adicionar Aluno</span>
+                </span>
+            </button>
+        </form>
+
+        <form action="/addProf" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> person_add </i>
+                    <span class="mobile-text">Adicionar Instrutor</span>
+                </span>
+            </button>
+        </form>
+        <form action="/addTurma" method="get">
+            <button>
+                <span>
+                    <i class="material-symbols-outlined"> group_add </i>
+                    <span class="mobile-text">Adicionar Turma</span>
+                </span>
+            </button>
+        </form>
+        <button>
+            <span>
+                <i class="material-symbols-outlined"> Logout </i>
+                <span class="mobile-text">Sair</span>
+            </span>
+        </button>
+    </nav>
     <!-- Menu p celular -->
     <button class="button-mobile" onclick="toggleMenu()">
         <i class="material-symbols-outlined"> menu </i>

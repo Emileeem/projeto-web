@@ -214,7 +214,7 @@
         <div class="row m-4">
             <% for (let i=0; i<Alunos.length; i++) { %>
                 <div class="col-sm-12 col-md-4 mt-2">
-                    <a href="/AvaliacaoEstudantes/<%= Alunos[i].IDAluno %>" class = "alunoss">
+                    <a href="/AvaliacaoEstudantes/<%= Materia.IDMateria %>/<%= Alunos[i].IDAluno %>" class = "alunoss">
                         <div class="shadow card h-100 ">
                             <img src="/img/<%= Alunos[i].Foto %>" class="rounded-circle col-2 mx-auto img-fluid mt-5"
                             alt="Foto aluno">
@@ -245,11 +245,11 @@
 
             <% for( let i=0; i < Arquivos.length; i++ ) { %>
                 <article class="stack projetos col-sm-12 col-md-3 m-4">
-                    <div class="card m-4">
+                    <div class="card outre m-4">
                         <div class="image">
                             <button class="dowload-button" id="btnDownload" download href="<%= Arquivos[i].Caminho %>">
                                 <img
-                                    src="https://www.kindpng.com/picc/m/56-568216_download-arrow-down-icon-green-green-arrow-icon.png">
+                                    src="https://www.kindpng.com/picc/m/56-568216_download-arrow-down-icon-green-green-arrow-icon.png" class = "arq">
                             </button>
                         </div>
                         <%= Arquivos[i].Nome %>

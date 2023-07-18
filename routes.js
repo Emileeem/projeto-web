@@ -54,6 +54,6 @@ route
   .post("/addMateria", add.addMateriaPost);
 
 route
-  .get("/AvaliacaoEstudantes/:IDAluno", avaliacao.avaliacaoGet);
-
+  .get("/AvaliacaoEstudantes/:IDMateria/:IDAluno", avaliacao.avaliacaoGet)
+  .post("/AvaliacaoEstudantes/:IDMateria/:IDAluno", avaliacao.avaliacaoPost);
 module.exports = route;

@@ -4,6 +4,7 @@ const passport = require("passport");
 
 module.exports = {
   async loginGet(req, res) {
+    await req.session.destroy();
     let erro = false;
     res.render("../views/Login", { erro });
   },

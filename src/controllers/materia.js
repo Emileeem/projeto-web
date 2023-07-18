@@ -43,7 +43,7 @@ module.exports = {
         case "Em Desenvolvimento":
           desempenho += Competencias[i]["Competencia.Peso"] / 2;
           break;
-        case "Inapto":
+        case "Apto":
           desempenho += Competencias[i]["Competencia.Peso"];
           break;
       }

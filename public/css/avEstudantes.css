@@ -234,8 +234,8 @@ body{
 /** main table **/
 
 .table{
-    position: absolute;
-    top: 30%;
+    position: relative;
+    top: 300px;
     left: 35%;
 }
 .tituli{
@@ -245,9 +245,11 @@ body{
     top: 21%;
 }
 .Feedback{
-    position: absolute;
-    top: 50%;
-    left: 14%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 20% !important;
+    margin-top: 20%;
 } 
 
 textarea{
@@ -266,125 +268,122 @@ textarea{
         top: 39%  !important;
     }
     .table{
-        position: absolute;
-        top: 37% !important;
+        position: relative;
+        top: 300px !important;
         left: 10% !important;
         width: 30% !important;
     }
 }
 @media(min-width:920px){
     .table{
-        position: absolute;
-        top: 35% !important;
-        left: 30% !important;
-        width: 55% !important;
+        position: relative;
+        top: 150px !important;
+        left: 15% !important;
+        width: 600px !important;
     }
     .tituli{
         position: absolute !important;
-        left: 30% !important;
-        top: 30%;
+        left: 320px !important;
+        top: 190px;
         text-align: center !important;
+        font-weight: bold;
     }
     .botao{
-        top: 24% !important; 
-        left: 70%;
+        left: 70% !important;
+        top: 190px;
     }
     .Feedback{
-        position: absolute;
-        top: 55%;
-        left: 30%;
-    } 
+        left: 8%;
+        width: 490px !important;
+        margin-top: 30%;
+    }
+
 }
 
 @media(max-width:919px){
     .table{
-        position: absolute;
-        top: 35% !important;
-        left: 25% !important;
-        width: 55% !important;
+        position: relative;
+        top: 150px !important;
+        left: 15% !important;
+        width: 600px !important;
     }
     .tituli{
         position: absolute !important;
         left: 25% !important;
-        top: 30%;
+        top: 190px;
         text-align: center !important;
+        font-weight: bold;
     }
     .botao{
-        top: 24% !important; 
-        left: 70%;
+        top: 190px;
+        left: 70% !important;
     }
     .Feedback{
-        position: absolute;
-        top: 55%;
-        left: 25%;
-    } 
+        left: 8%;
+        width: 290px !important;
+        margin-top: 30%;
+    }
+
 }
 @media(max-width:425px){
     .table{
-        position: absolute;
-        top: 35% !important;
+        position: relative;
+        top: 50px !important;
         left: 15% !important;
         width: 55% !important;
     }
     .tituli{
         position: absolute !important;
-        left: 25% !important;
-        top: 30%;
+        left: 37px !important;
+        top: 190px;
         text-align: center !important;
+        font-weight: bold;
     }
     .botao{
+        position: relative;
         left: 50%;
     }
     .Feedback{
-        position: absolute;
-        top: 55%;
-        left: 14%;
-    } 
+        left: 5%;
+        width: 290px !important;
+    }
 }
 @media(max-width:320px){
     .tituli{
-        top: 34%;
+        top: 178px !important;
+        left: 13px !important;
+        font-weight: bold;
     }
     .table{
-        position: absolute;
-        top: 39%!important; 
-        left: 10% !important;
-        width: 30% !important;
+        top: 49%!important; 
+        width: 290px !important;
+    }
+    .botao{
+        position: relative;
     }
     .Feedback{
-        position: absolute;
-        top: 55%;
-        left: 14%;
-    } 
+        width: 320px !important;
+    }
 }
+
 @media(max-width:375px){
     .table{
-        position: absolute;
-        top: 30%;
-        left: 15% !important;
-        width: 35% !important;
+        top: 80px !important;
+        left: 5% !important;
     }
-}
-@media(min-width:1000px){
     .tituli{
-        position: absolute !important;
-        left: 47% !important;
-        top: 23%;
-        text-align: center !important;
+        top: 190px !important;
+        left: 15px !important;
+        font-weight: bold;
+    }
+    .botao{
+        position: relative;
     }
     .Feedback{
-        position: absolute;
-        top: 50%;
-        left: 30%;
-    } 
-    textarea{
-        width:76% !important; 
-    }
-    .botao{ 
-        left: 83%;
-        top: 155px;
+        margin-top: 50%;
     }
 }
+
 @media(min-width:2000px){
     .tituli{
         position: absolute !important;

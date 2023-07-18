@@ -343,6 +343,39 @@ body {
     object-fit: cover;
     align-self: center;
 }
+/**card arquivos **/
+.projetos{
+    font-size: 23px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bolder;
+}
+.arq {
+	display: block;
+	max-width: 100%;
+    border: transparent;
+}
+.download-button{
+    border: white;
+}
+.stack {
+	width: 85%;
+	max-width: 400px;
+    margin: 2%;
+}
+.outre {
+	aspect-ratio: 3 / 2;
+	transition: .15s ease;
+	cursor: pointer;
+	padding: 5% 5% 15% 5%;
+    width: 300px;
+	
+}
+.image {
+	width: 100%;
+	border: 2px solid transparent;
+	aspect-ratio: 1 / 1;
+	position: relative;}
 
 @keyframes anim {
     100% {
@@ -350,6 +383,11 @@ body {
     }
 }
 @media (max-width: 480px) {
+    .outre{
+        width: 200px;
+        margin: 0 !important;
+        left: -20px;
+    }
     .nome-mat {
         z-index: 100;
         position: fixed;
@@ -400,7 +438,6 @@ body {
         background-color: rgb(117, 186, 255);
         position: fixed;
         top: 89%;
-        right: 3%;
         border-radius: 15px;
         border: transparent;
         height: 40px;

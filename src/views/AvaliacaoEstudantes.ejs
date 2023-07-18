@@ -185,10 +185,10 @@
 
     <!-- Main -->
     <div class="main">
-        <form action="">
+        <form action="/AvaliacaoEstudantes/<%=Materia.IDMateria%>/<%=Aluno.IDAluno%>" method="post">
             <div class=" w-50 teste">
                 <h2 class="tituli">
-                    Avaliação
+                    Avaliação <%= Aluno.Nome %>
                 </h2>
 
                 <table class="table table-bordered w-50">
@@ -212,8 +212,8 @@
                                 <%= Competencias[i]['Competencia.Nome'] %>
                             </td>
                             <td>
-                                <select name="Situação" id="situ" class="form-control">
-                                    <option disabled selected>
+                                <select name="Situacao" id="situ" class="form-control">
+                                    <option  selected>
                                         <%= Competencias[i].Situacao %>
                                     </option>
                                     <option value="Apto">Apto</option>
@@ -222,17 +222,17 @@
                                 </select>
                             </td>
                         </tr>
-                    <% } %>
-                </table>
-            </div>
-            <div class="Feedback">
-                <h3>
-                    Feedback:
-                </h3>
-                <textarea id="feedback" name="" rows="4" cols="50" placeholder="Deixe Aqui a sua anotação sobre o aluno.">
-                </textarea>
-            </div>
-            <button type="button" class="botao btn btn-secondary">Salvar Alterações</button>
+                        <% } %>
+                    </table>
+                </div>
+                <div class = "w-50 Feedback mb-3">
+                    <h3>
+                        Feedback:
+                    </h3>
+                    <textarea id="feedback" name="" rows="4" cols="50" placeholder="Deixe Aqui a sua anotação sobre o aluno.">
+                    </textarea>
+                </div>
+            <button type="submit" class="botao btn btn-secondary">Salvar Alterações</button>
         </form>
     </div>
     </div>

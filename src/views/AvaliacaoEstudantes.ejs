@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <!-- Css -->
-    <link rel="stylesheet" href="avEstudantes.css">
+    <link rel="stylesheet" href="/css/avEstudantes.css">
 
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -185,48 +185,55 @@
 
     <!-- Main -->
     <div class="main">
-        <div class=" w-50 teste">
-            <h2 class="tituli">
-                Avaliação S/N
-            </h2>
-            <table class="table table-bordered w-50">
-                <tr>
-                    <td>
-                        <b>Peso</b>
-                    </td>
-                    <td>
-                        <b>Nome Competência</b>
-                    </td>
-                    <td>
-                        <b>Situação Aluno</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        2
-                    </td>
-                    <td>
-                        Criar um Programa
-                    </td>
-                    <td>
-                        <select name="Situação" id="situ" class="form-control">
-                            <option disabled selected> Selecione </option>
-                            <option value="Apto">Apto</option>
-                            <option value="Inapto">Inapto</option>
-                            <option value="Em Desenvolvimento">Em Desenvolvimento</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="Feedback">
-            <h3>
-                Feedback:
-            </h3>
-            <textarea id="" name="" rows="4" cols="50" placeholder="Deixe Aqui a sua anotação sobre o aluno.">
+        <form action="">
+            <div class=" w-50 teste">
+                <h2 class="tituli">
+                    Avaliação
+                </h2>
+
+                <table class="table table-bordered w-50">
+                    <tr>
+                        <td>
+                            <b>Peso</b>
+                        </td>
+                        <td>
+                            <b>Nome Competência</b>
+                        </td>
+                        <td>
+                            <b>Situação Aluno</b>
+                        </td>
+                    </tr>
+                    <%for(let i=0; i < Competencias.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%= Competencias[i]['Competencia.Peso'] %>
+                            </td>
+                            <td>
+                                <%= Competencias[i]['Competencia.Nome'] %>
+                            </td>
+                            <td>
+                                <select name="Situação" id="situ" class="form-control">
+                                    <option disabled selected>
+                                        <%= Competencias[i].Situacao %>
+                                    </option>
+                                    <option value="Apto">Apto</option>
+                                    <option value="Inapto">Inapto</option>
+                                    <option value="Em Desenvolvimento">Em Desenvolvimento</option>
+                                </select>
+                            </td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+            <div class="Feedback">
+                <h3>
+                    Feedback:
+                </h3>
+                <textarea id="feedback" name="" rows="4" cols="50" placeholder="Deixe Aqui a sua anotação sobre o aluno.">
                 </textarea>
-        </div>
-        <button type="button" class="botao btn btn-secondary">Salvar Alterações</button>
+            </div>
+            <button type="button" class="botao btn btn-secondary">Salvar Alterações</button>
+        </form>
     </div>
     </div>
 </body>

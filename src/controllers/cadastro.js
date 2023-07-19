@@ -167,7 +167,7 @@ module.exports = {
       res.render("../views/AddProf", { erro })
       return
     }
-    else{
+    else if(dados.Senha.lenght < 6){
       erro2 = true;
       res.render("../views/AddProf", {erro2})
       return

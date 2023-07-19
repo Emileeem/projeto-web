@@ -199,7 +199,7 @@
                             </td>
                             <td>
                                 <select name="Situacao" id="situ" class="form-control">
-                                    <option  selected>
+                                    <option selected>
                                         <%= Competencias[i].Situacao %>
                                     </option>
                                     <option value="Apto">Apto</option>
@@ -209,19 +209,20 @@
                             </td>
                         </tr>
                         <% } %>
-                    </table>
-                </div>
-                <div class = "w-50 Feedback mb-3">
-                    <h3>
-                        Feedback:
-                    </h3>
-                    <textarea id="feedback" name="comentario" rows="4" cols="50" placeholder="Deixe Aqui a sua anotação sobre o aluno.">
-                    </textarea>
-                </div>
+                </table>
+            </div>
+            <div class="w-50 Feedback mb-3">
+                <h3>
+                    Feedback:
+                </h3>
+                <textarea id="feedback" name="comentario" rows="4" cols="50"
+                    placeholder="Deixe Aqui a sua anotação sobre o aluno."><%= Feedbacks.Descricao %></textarea>
+            </div>
             <button type="submit" class="botao btn btn-secondary">Salvar Alterações</button>
         </form>
     </div>
     </div>
+    <script src="js/menu.js"></script>
 </body>
 
 </html>

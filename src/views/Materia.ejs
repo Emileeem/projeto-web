@@ -39,9 +39,9 @@
     <!-- -------- -->
     <!-- Menu com click -->
 
-     <!-- Menu com click -->
+    <!-- Menu com click -->
 
-     <aside class="sidebar shadow">
+    <aside class="sidebar shadow">
         <header class="sidebarheader">
             <img class="logo-img" src="/img/<%= session.foto %>" alt="foto do usuario">
         </header>
@@ -156,13 +156,22 @@
                     </tbody>
                 </table>
             </div>
+            <!-- feedback -->
+            <div class="w-50 Feedback mb-3">
+                <h3>
+                    Feedback:
+                </h3>
+                <textarea id="feedback" name="comentario" rows="4" cols="50" placeholder="Feedback do Instrutor"
+                    disabled><%= Feedbacks.Descricao %></textarea>
+            </div>
             <!-- arquivos -->
             <p class="title-media mt-4">Arquivos disponibilizados:</p>
-            
+
             <div class="row g-7 p-4 m-4">
-            <% for( let i=0; i < Arquivos.length; i++ ) { %>
+                <% for( let i=0; i < Arquivos.length; i++ ) { %>
                     <article class="stack projetos col-sm-12 col-md-3 m-4">
-                        <a style="text-decoration: none;" href="/img/<%= Arquivos[i].Caminho %>" Download="<%= Arquivos[i].Nome %>">
+                        <a style="text-decoration: none;" href="/img/<%= Arquivos[i].Caminho %>"
+                            Download="<%= Arquivos[i].Nome %>">
                             <div class="card m-4">
                                 <div class="image">
                                     <button class="dowload-button" id="btnDownload">
@@ -175,7 +184,7 @@
                         </a>
                     </article>
                     <% } %>
-                </div>
+            </div>
 
         </div>
     </main>

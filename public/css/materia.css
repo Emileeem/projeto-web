@@ -229,7 +229,7 @@ body{
         display: flex;
         justify-content: center;
     }
-    
+        
 }
 
 
@@ -341,6 +341,15 @@ body{
     text-align: center;
     font-size: 28px;
 }
+
+.Feedback{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 20% !important;
+    margin-top: 20%;
+} 
+
 /**card arquivos **/
 .projetos{
     font-size: 23px;
@@ -467,6 +476,10 @@ img {
         word-wrap: break-word;
         padding: 3%;
     }
+        .Feedback{
+        left: 5%;
+        width: 290px !important;
+    }
 }
 
 
@@ -487,6 +500,11 @@ img {
         font-size: 35px;
         margin-top: 2%;
         margin-bottom: 3%;
+    }
+        .Feedback{
+        left: 8%;
+        width: 490px !important;
+        margin-top: 10%;
     }
 }
 @media (min-width: 2000px){

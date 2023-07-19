@@ -53,7 +53,16 @@
         </div>
     </nav>
     <!-- -------- -->
-
+    <% if (erro==true) { %>
+        <script>
+            alert("O EDV inserido não é válido!")
+        </script>
+    <% } %>
+    <% if (erro2==true) { %>
+        <div class="alert alert-danger" role="alert">
+            A senha precisa ter 6 Dígitos ou mais!
+        </div>
+    <% } %>
 
     <!-- Menu com click -->
 

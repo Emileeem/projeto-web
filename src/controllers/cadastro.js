@@ -41,7 +41,8 @@ module.exports = {
 
   async alunoGet(req, res) {
     session = req.session;
-
+    erro = false;
+    erro2 = false;
     if (!session.edv) {
       res.redirect("/");
       return;
@@ -52,7 +53,7 @@ module.exports = {
     });
 
     //passando o nome das salas para o front
-    res.render("../views/AddAluno", { turmas, session });
+    res.render("../views/AddAluno", { turmas, session, erro, erro2});
   },
 
   async alunoInsert(req, res) {
@@ -73,36 +74,52 @@ module.exports = {
       // Pegar novo nome da foto
       foto = req.file.filename;
     }
-
-    const Aluno = await aluno.create({
-      IDAluno: dados.EDV,
-      Nome: dados.Nome,
-      Senha: dados.Senha,
-      Foto: foto,
-      IDTurma: dados.Turma,
-    });
-
-    const Materias = await materia.findAll({
-      raw: true,
-      where: { IDTurma: dados.Turma },
-    });
-
-    for (let i = 0; i < Materias.length; i++) {
-      const Competencias = await competencia.findAll({
+    if (dados.EDV.length == 8 && dados.Senha.lenght >= 6) {
+      const Aluno = await aluno.create({
+        IDAluno: dados.EDV,
+        Nome: dados.Nome,
+        Senha: dados.Senha,
+        Foto: foto,
+        IDTurma: dados.Turma,
+      });
+      const Materias = await materia.findAll({
         raw: true,
-        where: { IDMateria: Materias[i].IDMateria },
+        where: { IDTurma: dados.Turma },
       });
-      await feedback.create({
-        IDMateria: Materias[i].IDMateria,
-        IDAluno: Aluno.IDAluno,
-      });
-      for (let j = 0; j < Competencias.length; j++) {
-        await situacao.create({
-          Situacao: "Inapto",
-          IDAluno: Aluno.IDAluno,
-          IDCompetencia: Competencias[j].IDCompetencia,
+  
+      for (let i = 0; i < Materias.length; i++) {
+        const Competencias = await competencia.findAll({
+          raw: true,
+          where: { IDMateria: Materias[i].IDMateria },
         });
+        await feedback.create({
+          IDMateria: Materias[i].IDMateria,
+          IDAluno: Aluno.IDAluno,
+        });
+        for (let j = 0; j < Competencias.length; j++) {
+          await situacao.create({
+            Situacao: "Inapto",
+            IDAluno: Aluno.IDAluno,
+            IDCompetencia: Competencias[j].IDCompetencia,
+          });
+        }
       }
+    }
+    if(dados.EDV.length != 8){
+      const turmas = await turma.findAll({
+        raw: true, //retorna informações da tabela sem metadados.
+      });
+      erro = true;
+      res.render("../views/AddAluno", { erro, session, turmas})
+      return
+    }
+    else{
+      const turmas = await turma.findAll({
+        raw: true, //retorna informações da tabela sem metadados.
+      });
+      erro2 = true;
+      res.render("../views/AddAluno", { erro2, session, turmas})
+      return
     }
     //Redirecionando para a página inicial
     res.redirect(`/homeprof`);
@@ -110,13 +127,14 @@ module.exports = {
 
   async professorGet(req, res) {
     session = req.session;
-
+    erro = false;
+    erro2 = false;
     if (!session.edv) {
       res.redirect("/");
       return;
     }
 
-    res.render("../views/AddProf", { session });
+    res.render("../views/AddProf", { session, erro, erro2 });
   },
 
   async professorInsert(req, res) {
@@ -136,14 +154,24 @@ module.exports = {
       // Pegar novo nome da foto
       foto = req.file.filename;
     }
-
-    await professor.create({
-      IDProfessor: dados.EDV,
-      Nome: dados.Nome,
-      Senha: dados.Senha,
-      Foto: foto,
-    });
-
+    if (dados.EDV.length == 8 && dados.Senha.lenght >= 6) {
+      await professor.create({
+        IDProfessor: dados.EDV,
+        Nome: dados.Nome,
+        Senha: dados.Senha,
+        Foto: foto,
+      });
+    }
+    if(dados.EDV.length != 8) {
+      erro = true;
+      res.render("../views/AddProf", { erro })
+      return
+    }
+    else{
+      erro2 = true;
+      res.render("../views/AddProf", {erro2})
+      return
+    }
     //Redirecionando para a página inicial
     res.redirect(`/homeprof`);
   },

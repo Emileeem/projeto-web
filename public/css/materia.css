@@ -343,12 +343,16 @@ body{
 }
 
 .Feedback{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    top: 20% !important;
-    margin-top: 20%;
-} 
+    background-color: aliceblue;
+    margin: 2%;
+    padding: 5%;
+    text-align: center;
+    left: 0;
+}
+
+.comentarioprof{
+    font-size: 25px;
+}
 
 /**card arquivos **/
 .projetos{
@@ -476,9 +480,13 @@ img {
         word-wrap: break-word;
         padding: 3%;
     }
-        .Feedback{
-        left: 5%;
-        width: 290px !important;
+    .Feedback{
+        margin: 0;
+        padding: 1%;
+        width: 80% !important;
+    }
+    .comentarioprof{
+        font-size: 20px;
     }
 }
 
@@ -501,7 +509,7 @@ img {
         margin-top: 2%;
         margin-bottom: 3%;
     }
-        .Feedback{
+    .Feedback{
         left: 8%;
         width: 490px !important;
         margin-top: 10%;

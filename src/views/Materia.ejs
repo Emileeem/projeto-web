@@ -18,6 +18,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+
     <!-- Google Simbols -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -157,12 +161,14 @@
                 </table>
             </div>
             <!-- feedback -->
-            <div class="w-50 Feedback mb-3">
+            <div class=" Feedback mb-3 shadow">
                 <h3>
-                    Feedback:
+                    Comentário do seu Professor:
                 </h3>
-                <textarea id="feedback" name="comentario" rows="4" cols="50" placeholder="Feedback do Instrutor"
-                    disabled><%= Feedbacks.Descricao %></textarea>
+                <hr>
+                <p class = "comentarioprof"> 
+                    <%= Feedbacks.Descricao %>
+                </p>
             </div>
             <!-- arquivos -->
             <p class="title-media mt-4">Arquivos disponibilizados:</p>

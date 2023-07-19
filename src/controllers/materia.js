@@ -3,6 +3,7 @@ const aluno = require("../model/aluno");
 const arquivos = require("../model/arquivos");
 const competencia = require("../model/competencia");
 const situacao = require("../model/situacao");
+const feedback = require("../model/feedback");
 
 module.exports = {
   async materiaGet(req, res) {
@@ -12,6 +13,11 @@ module.exports = {
       res.redirect("/");
       return;
     }
+
+    const Feedbacks = await feedback.findOne({
+      raw: true,
+      where: { IDMateria: req.params.IDMateria, IDAluno: session.edv },
+    });
 
     const Materia = await materia.findByPk(req.params.IDMateria, {
       raw: true,
@@ -27,10 +33,10 @@ module.exports = {
       include: [
         {
           model: competencia,
-          where: { IDMateria: req.params.IDMateria},
+          where: { IDMateria: req.params.IDMateria },
         },
       ],
-      where: {IDAluno: session.edv}
+      where: { IDAluno: session.edv },
     });
 
     let total = 0;
@@ -50,7 +56,15 @@ module.exports = {
       total += Competencias[i]["Competencia.Peso"];
     }
     let aptidao = (desempenho / total) * 100;
-    res.render("../views/Materia", { Materia, Arquivos, session, Competencias, aptidao });
+
+    res.render("../views/Materia", {
+      Materia,
+      Arquivos,
+      session,
+      Competencias,
+      aptidao,
+      Feedbacks,
+    });
   },
 
   async materiaProfGet(req, res) {

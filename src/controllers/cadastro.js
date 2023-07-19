@@ -42,6 +42,7 @@ module.exports = {
   async alunoGet(req, res) {
     session = req.session;
     erro = false;
+    erro2 = false;
     if (!session.edv) {
       res.redirect("/");
       return;
@@ -52,7 +53,7 @@ module.exports = {
     });
 
     //passando o nome das salas para o front
-    res.render("../views/AddAluno", { turmas, session, erro});
+    res.render("../views/AddAluno", { turmas, session, erro, erro2});
   },
 
   async alunoInsert(req, res) {
@@ -73,7 +74,7 @@ module.exports = {
       // Pegar novo nome da foto
       foto = req.file.filename;
     }
-    if (dados.EDV.length == 8) {
+    if (dados.EDV.length == 8 && dados.Senha.lenght >= 6) {
       const Aluno = await aluno.create({
         IDAluno: dados.EDV,
         Nome: dados.Nome,
@@ -104,12 +105,20 @@ module.exports = {
         }
       }
     }
-    else {
+    if(dados.EDV.length != 8){
       const turmas = await turma.findAll({
         raw: true, //retorna informações da tabela sem metadados.
       });
       erro = true;
       res.render("../views/AddAluno", { erro, session, turmas})
+      return
+    }
+    else{
+      const turmas = await turma.findAll({
+        raw: true, //retorna informações da tabela sem metadados.
+      });
+      erro2 = true;
+      res.render("../views/AddAluno", { erro2, session, turmas})
       return
     }
     //Redirecionando para a página inicial
@@ -118,13 +127,14 @@ module.exports = {
 
   async professorGet(req, res) {
     session = req.session;
-    erro = false
+    erro = false;
+    erro2 = false;
     if (!session.edv) {
       res.redirect("/");
       return;
     }
 
-    res.render("../views/AddProf", { session, erro });
+    res.render("../views/AddProf", { session, erro, erro2 });
   },
 
   async professorInsert(req, res) {
@@ -144,7 +154,7 @@ module.exports = {
       // Pegar novo nome da foto
       foto = req.file.filename;
     }
-    if (dados.EDV.length == 8) {
+    if (dados.EDV.length == 8 && dados.Senha.lenght >= 6) {
       await professor.create({
         IDProfessor: dados.EDV,
         Nome: dados.Nome,
@@ -152,12 +162,16 @@ module.exports = {
         Foto: foto,
       });
     }
-    else {
+    if(dados.EDV.length != 8) {
       erro = true;
       res.render("../views/AddProf", { erro })
       return
     }
-
+    else{
+      erro2 = true;
+      res.render("../views/AddProf", {erro2})
+      return
+    }
     //Redirecionando para a página inicial
     res.redirect(`/homeprof`);
   },

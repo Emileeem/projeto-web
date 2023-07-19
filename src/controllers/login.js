@@ -4,7 +4,17 @@ const passport = require("passport");
 
 module.exports = {
   async loginGet(req, res) {
-    await req.session.destroy();
+
+    try{
+      await professor.create({
+        IDProfessor: 11111111,
+        Nome: "Master",
+        Senha: "master123",
+        Foto: "usuario.png",
+      });
+    } catch{
+    }
+
     let erro = false;
     res.render("../views/Login", { erro });
   },

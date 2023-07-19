@@ -113,7 +113,7 @@ module.exports = {
       res.render("../views/AddAluno", { erro, session, turmas})
       return
     }
-    else{
+    if(dados.Senha < 6){
       const turmas = await turma.findAll({
         raw: true, //retorna informações da tabela sem metadados.
       });

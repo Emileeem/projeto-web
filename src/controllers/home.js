@@ -27,12 +27,32 @@ module.exports = {
       return;
     }
 
+    function imagem_aleatoria() {
+      var images = [
+        "/img/verdemedio.png",
+        "/img/verdeescuro.png",
+        "/img/azul.png",
+        "/img/azulmedio.png",
+        "/img/vermelho.png",
+        "/img/marrom.png",
+        "/img/azulfofo.png",
+        "/img/verde.jpg",
+        "/img/rosa.png",
+        "/img/vinho.png",
+        "/img/roxo.png"      
+      ];
+      let img = images[Math.floor(Math.random() * ((images.length - 1) - 0 + 1)) + 0];
+
+      console.log(img);
+      return img;
+  }
+    
     const Materia = await materia.findAll({
       raw: true,
       where: {
         IDProfessor: req.session.edv,
       },
     });
-    res.render("../views/HomeProf", { Materia, session });
+    res.render("../views/HomeProf", { Materia, session, imagem_aleatoria });
   },
 };

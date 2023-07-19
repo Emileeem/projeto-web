@@ -74,7 +74,7 @@ module.exports = {
       // Pegar novo nome da foto
       foto = req.file.filename;
     }
-    if (dados.EDV.length == 8 && dados.Senha.lenght >= 6) {
+    if (dados.EDV.length == 8 && dados.Senha.length >= 6) {
       const Aluno = await aluno.create({
         IDAluno: dados.EDV,
         Nome: dados.Nome,
@@ -154,13 +154,16 @@ module.exports = {
       // Pegar novo nome da foto
       foto = req.file.filename;
     }
-    if (dados.EDV.length == 8 && dados.Senha.lenght >= 6) {
+
+    if (dados.EDV.length == 8 && dados.Senha.length >= 6) {
       await professor.create({
         IDProfessor: dados.EDV,
         Nome: dados.Nome,
         Senha: dados.Senha,
         Foto: foto,
       });
+      //Redirecionando para a página inicial
+      res.redirect(`/homeprof`);
     }
     if(dados.EDV.length != 8) {
       erro = true;
@@ -172,7 +175,5 @@ module.exports = {
       res.render("../views/AddProf", {erro2})
       return
     }
-    //Redirecionando para a página inicial
-    res.redirect(`/homeprof`);
   },
 };
